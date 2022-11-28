@@ -81,23 +81,28 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity.y -= gravity * Time.deltaTime;
         }
-    controller.Move(velocity * Time.deltaTime);
 
-        //Sound Effects
-        if (footStepSound != null)
-        {
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W) && isGrounded)
-            {
-                nextFootstep -= Time.deltaTime;
-                if (nextFootstep <= 0)
-                {
-                    GetComponent<AudioSource>().PlayOneShot(footStepSound, 0.7f);
-                    nextFootstep += footStepDelay;
-                }
-            }
-        }
+        controller.Move(velocity * Time.deltaTime);
 
+        PlaySound();
     }
 
+
+    private void PlaySound()
+    {
+        //Sound Effects
+        if (footStepSound == null) return;
+
+        if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.W) || !isGrounded) return;
+
+            nextFootstep -= Time.deltaTime;
+        
+        if (nextFootstep > 0) return;
+            
+            GetComponent<AudioSource>().PlayOneShot(footStepSound, 0.7f);
+            nextFootstep += footStepDelay;
+            
+        
+    }
 }
 
