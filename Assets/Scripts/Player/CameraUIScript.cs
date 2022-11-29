@@ -43,13 +43,6 @@ public class CameraUIScript : MonoBehaviour
         //if looking at object
         if (lookedObject != null)
         {
-            if (lookedObject.transform.CompareTag("Clutchable"))
-            {
-                grabPanel.SetActive(true);
-                throwPanel.SetActive(false);
-                pushPanel.SetActive(true);
-                interactPanel.SetActive(false);
-            }
             if (lookedObject.transform.CompareTag("Interactable"))
             {
                 grabPanel.SetActive(false);
@@ -67,19 +60,5 @@ public class CameraUIScript : MonoBehaviour
             pushPanel.SetActive(false);
             interactPanel.SetActive(false);
         }
-
-        //if grabbing the object
-        if (lookedObject != null && Input.GetMouseButton(0))
-        {
-			holdingObject = true;
-        }
-		else holdingObject = false;
-            if (lookedObject != null && lookedObject.transform.CompareTag("Clutchable") && holdingObject)
-            {
-                grabPanel.SetActive(false);
-                throwPanel.SetActive(true);
-                pushPanel.SetActive(false);
-                interactPanel.SetActive(false);
-            }
     }
 }

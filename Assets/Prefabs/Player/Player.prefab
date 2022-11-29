@@ -810,9 +810,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20e2846f11907fabb08c5724509a3d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyText: {fileID: 0}
-  cleanText: {fileID: 0}
-  pausePanel: {fileID: 0}
+  moneyText: {fileID: 4795688456618275671}
+  cleanText: {fileID: 2512143628143715947}
+  pausePanel: {fileID: 2010868147971174036}
 --- !u!114 &3448502430718305770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -881,7 +881,7 @@ GameObject:
   - component: {fileID: 2656388621808582136}
   - component: {fileID: 2512143628143715947}
   m_Layer: 5
-  m_Name: CleanlinessCount
+  m_Name: CleanCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
