@@ -7,13 +7,9 @@ public class PlayerMovement : MonoBehaviour
     
     private CharacterController controller;
     private Transform groundCheck;
-	private Transform vaultCheck;
     private float groundDistance = 0.4f;
-	private float vaultDistance = 0.4f;
     public bool isGrounded;
     private Vector3 velocity;
-	public bool isCarrying;
-	public bool isVaulting;
 
     [Header("Assignables")]
     [SerializeField] private float sprintMultiplier = 2f;
@@ -23,7 +19,6 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Layer Mask")]
     [SerializeField] private LayerMask groundMask;
-    [SerializeField] private LayerMask vaultMask;
 
     [Header("Audio")]
     [SerializeField] private AudioClip footStepSound;
@@ -34,7 +29,6 @@ public class PlayerMovement : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         groundCheck = gameObject.transform.Find("GroundCheck");
-        vaultCheck = gameObject.transform.Find("VaultCheck");
     }
 
     // Update is called once per frame
@@ -48,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 move = transform.right * x + transform.forward * z;
 
-        if (Input.GetKey(KeyCode.LeftShift) && !isCarrying)
+        if (Input.GetKey(KeyCode.LeftShift))
         {
             controller.Move(move * (speed * sprintMultiplier) * Time.deltaTime);
         }
@@ -57,27 +51,12 @@ public class PlayerMovement : MonoBehaviour
             controller.Move(move * speed * Time.deltaTime);
         }
 
-		
-		if(Input.GetKeyDown(KeyCode.Space) && Physics.CheckSphere(vaultCheck.position, vaultDistance, vaultMask)){
-			Debug.Log("Vaulting");
-			controller.GetComponent<Animator>().SetTrigger("vaulting");
-		}
-
-		if (Input.GetKeyDown(KeyCode.E))
-		{
-			Debug.Log("Dashing");
-			controller.GetComponent<Animator>().SetTrigger("dashTest");
-
-		}
-
-		/*
         if (Input.GetButtonDown("Jump") && isGrounded)
         { 
             velocity.y = jumpHeight;
         }
-		 */
 
-		if (!isGrounded)
+	if (!isGrounded)
         {
             velocity.y -= gravity * Time.deltaTime;
         }
