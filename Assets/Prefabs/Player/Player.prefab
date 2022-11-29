@@ -638,7 +638,7 @@ MonoBehaviour:
   rayLength: 10
   layerMaskInteract:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 2147483647
 --- !u!1 &593595538584117984
 GameObject:
   m_ObjectHideFlags: 0
