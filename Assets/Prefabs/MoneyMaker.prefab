@@ -126,7 +126,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5620145871626967660}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 042ca8950e6db6340a00211fb7b0b1f5, type: 3}
+  m_Script: {fileID: 11500000, guid: 52a606bad09db8746baecbb4466a9dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objName: MoneyMaker
+  objName: 
