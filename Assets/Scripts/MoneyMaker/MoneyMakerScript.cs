@@ -49,7 +49,7 @@ public class MoneyMakerScript : MonoBehaviour
 		}
 	}
 
-	public void interacted() {
+	public void manualEnable(){
 		isManual = true;
 	}
 }

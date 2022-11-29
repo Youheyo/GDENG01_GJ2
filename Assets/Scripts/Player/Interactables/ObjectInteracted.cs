@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class ObjectInteracted : MonoBehaviour
 {
-
 	[SerializeField] private string objName;
 
-	public void onInteract() {
-		if(objName == "MoneyMaker") {
-			gameObject.GetComponent<MoneyMakerScript>().interacted();
-		}
+	virtual public void onInteract() {
+		
 	}
 
 	void Awake()
