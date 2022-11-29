@@ -27,7 +27,7 @@ public class ReticleScript : MonoBehaviour
     {
         RaycastHit hit;
         if (Physics.Raycast(camera.position, camera.forward, out hit, maxReach) &&
-            hit.transform.gameObject.CompareTag("Clutchable"))
+            hit.transform.gameObject.CompareTag("Interactable"))
         {
 			hitObj = hit.transform.gameObject;
 

@@ -22,21 +22,24 @@ public class PlayerUIScript : MonoBehaviour
 
 	}
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
+	// Start is called before the first frame update
+	void Start()
+	{
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
-		//noteCount = GameManager.Instance.NotesFound();
-		//noteCountText.text = "Notes found: " + noteCount.ToString();
+	// Update is called once per frame
+	void Update()
+	{
+		
+		moneyCount = GameManager.instance.getMoneyAmt();
+		moneyText.text = "Money: " + moneyCount.ToString();
+		cleanCount = GameManager.instance.getCleanAmt();
+		cleanText.text = "Cleanliness: " + cleanCount.ToString();
 		if (Input.GetButtonDown("Cancel"))
 		{
 			pauseScreen();
 		}
-    }
+	}
 
 	public void pauseScreen()
 	{
