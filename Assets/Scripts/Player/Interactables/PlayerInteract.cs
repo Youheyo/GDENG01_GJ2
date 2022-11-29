@@ -7,7 +7,7 @@ public class PlayerInteract : MonoBehaviour
 {
 	private GameObject raycastedObj;
 	[SerializeField] private int rayLength = 10;
-	[SerializeField] private LayerMask layerMaskInteract;
+	//[SerializeField] private LayerMask layerMaskInteract;
 
     // Update is called once per frame
     void Update()
@@ -15,7 +15,7 @@ public class PlayerInteract : MonoBehaviour
         RaycastHit hit;
 		Vector3 fwd = transform.TransformDirection(Vector3.forward);
 
-		if(Physics.Raycast(transform.position, fwd, out hit, rayLength, layerMaskInteract))
+		if(Physics.Raycast(transform.position, fwd, out hit, rayLength))
 		{
 			//if (hit.collider.CompareTag("Interactable"))
 			//{

@@ -30,7 +30,6 @@ public class PlayerUIScript : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		
 		moneyCount = GameManager.instance.getMoneyAmt();
 		moneyText.text = "Money: " + moneyCount.ToString();
 		cleanCount = GameManager.instance.getCleanAmt();

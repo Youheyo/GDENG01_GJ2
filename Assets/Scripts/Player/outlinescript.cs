@@ -14,7 +14,7 @@ public class outlinescript : MonoBehaviour
     [SerializeField] private Color activeColor;
     [SerializeField] private Color inactiveColor;
 
-	[SerializeField] private LayerMask layerMask;
+	//[SerializeField] private LayerMask layerMask;
 
 	private float outlineCountdown = 0.5f;
 
@@ -32,10 +32,10 @@ public class outlinescript : MonoBehaviour
     {
 
 
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 20f, layerMask))// &&
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 20f))// &&
             //hit.transform.GetComponent<Rigidbody>() &&
         {
-            if(hit.transform.gameObject.CompareTag("Clutchable"))
+            if(hit.transform.gameObject.CompareTag("Interactable"))
             gameobj = hit.transform.gameObject;
 
         }
