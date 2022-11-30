@@ -14,11 +14,13 @@ public class MaterialChangeScript : ObjectInteracted
     {
         this.rend = GetComponent<Renderer>();
 		this.rend.enabled = true;
-		//this.rend.sharedMaterial = material[level];
-    }
+		this.rend.material.SetTexture("_DetailAlbedoMap", texture[level]);
 
-    // Update is called once per frame
-    void Update()
+		//this.rend.sharedMaterial = material[level];
+	}
+
+	// Update is called once per frame
+	void Update()
     {
 		//this.rend.sharedMaterial = material[level];
     }
@@ -26,6 +28,7 @@ public class MaterialChangeScript : ObjectInteracted
 	public override void onClean()
 	{
 		levelUp();
+		this.rend.material.SetTexture("_DetailAlbedoMap", texture[level]);
 	}
 
 	public void levelUp()
@@ -33,7 +36,6 @@ public class MaterialChangeScript : ObjectInteracted
 		if (level < texture.Length)
 		{
 			this.level++;
-			this.rend.material.SetTexture("_DetailAlbedoMap", texture[level]);
 		}
 	}
 	public void levelDown()
