@@ -10,6 +10,7 @@ public class PlayerUIScript : MonoBehaviour
 	[SerializeField] private TMP_Text moneyText;
 	[SerializeField] private TMP_Text cleanText;
 	[SerializeField] private GameObject pausePanel;
+	[SerializeField] private GameObject upgradePanel;
 
 	private int moneyCount = 0;
 	private int cleanCount = 0;
@@ -58,13 +59,36 @@ public class PlayerUIScript : MonoBehaviour
 		}
 	}
 
+	public void upgradeScreen() {
+		upgradePanel.SetActive(!upgradePanel.activeSelf);
+		if (upgradePanel.activeSelf)
+		{
+			Time.timeScale = 0.0f;
+			Cursor.visible = true;
+			Cursor.lockState = CursorLockMode.None;
+		}
+		else
+		{
+			Time.timeScale = 1.0f;
+			Cursor.visible = false;
+			Cursor.lockState = CursorLockMode.Locked;
+
+		}
+	}
+
+	public void closeUpgrade() {
+		Time.timeScale = 1.0f;
+		upgradePanel.SetActive(false);
+		Cursor.visible = false;
+		Cursor.lockState = CursorLockMode.Locked;
+	}
+
 	public void resumeGame()
 	{
 		Time.timeScale = 1.0f;
 		pausePanel.SetActive(false);
 		Cursor.visible = false;
 		Cursor.lockState = CursorLockMode.Locked;
-
 	}
 
 	public void GoToMainMenu()

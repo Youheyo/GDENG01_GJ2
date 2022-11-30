@@ -2,12 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using UnityEngine.UI;
 
 public class PlayerInteract : MonoBehaviour
 {
 	private GameObject raycastedObj;
 	[SerializeField] private int rayLength = 10;
+	private GameObject interactedObj;
+	[SerializeField] private PlayerUIScript ui;
+	[SerializeField] private GameObject upgradePanel;
+	[SerializeField] private TMP_Text noUpgrades;
+	// Very quick fix, not really good coding standards but we'll have to make do.
+	private bool raycastOff = false;
 	//[SerializeField] private LayerMask layerMaskInteract;
+	
+	void Awake() {
+		ui = gameObject.transform.parent.GetComponent<PlayerUIScript>();
+
+	}
 
     // Update is called once per frame
     void Update()
@@ -15,10 +28,10 @@ public class PlayerInteract : MonoBehaviour
         RaycastHit hit;
 		Vector3 fwd = transform.TransformDirection(Vector3.forward);
 
-		if(Physics.Raycast(transform.position, fwd, out hit, rayLength))
+		if(Physics.Raycast(transform.position, fwd, out hit, rayLength) && raycastOff == false)
 		{
-			//if (hit.collider.CompareTag("Interactable"))
-			//{
+			if (hit.collider.CompareTag("Interactable"))
+			{
 				raycastedObj = hit.collider.gameObject;
 
 				if (Input.GetKeyDown(KeyCode.E))
@@ -28,7 +41,19 @@ public class PlayerInteract : MonoBehaviour
 					if(raycastedObj != null)
 					raycastedObj.GetComponent<ObjectInteracted>().onInteract();
 				}
-			//}
+
+				if(Input.GetMouseButtonDown(0)) {
+					interactedObj = hit.transform.gameObject;
+					Debug.Log("Upgrading: " + interactedObj.name);
+					if(interactedObj != null) {
+						raycastOff = true;
+						//ui.upgradeScreen();
+						upgradeScreen();
+						Upgradeables upgrades = interactedObj.GetComponent<Upgradeables>();
+						fillUpgrades(upgrades);
+					}
+				} 
+			}
 		}
     }
 
@@ -39,4 +64,40 @@ public class PlayerInteract : MonoBehaviour
 		Vector3 direction = transform.TransformDirection(Vector3.forward) * rayLength;
 		Gizmos.DrawRay(transform.position, direction);
 	}
+
+	public void upgradeScreen() {
+		upgradePanel.SetActive(!upgradePanel.activeSelf);
+		if (upgradePanel.activeSelf)
+		{
+			Time.timeScale = 0.0f;
+			Cursor.visible = true;
+			Cursor.lockState = CursorLockMode.None;
+		}
+		else
+		{
+			Time.timeScale = 1.0f;
+			Cursor.visible = false;
+			Cursor.lockState = CursorLockMode.Locked;
+
+		}
+	}
+
+	public void closeUpgrade() {
+		Time.timeScale = 1.0f;
+		upgradePanel.SetActive(false);
+		Cursor.visible = false;
+		Cursor.lockState = CursorLockMode.Locked;
+		raycastOff = false;
+	}
+
+	public void fillUpgrades(Upgradeables upg) {
+		if(upg.upgrades.Length > 0) {
+			//noUpgrades.GetComponent<MeshRenderer>().enabled = false;
+			noUpgrades.text = "Has upgrades";
+		} else {
+			//noUpgrades.GetComponent<MeshRenderer>().enabled = true;
+			noUpgrades.text = string.Empty;
+		}
+	}
+
 }
