@@ -1229,6 +1229,27 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &778444504 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5620145871626967660, guid: 269e4c1b027866597bc06b26501ebd93, type: 3}
+  m_PrefabInstance: {fileID: 2161857513510265539}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &778444511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778444504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f72d383e4ef56aaf081d10419cafd4ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgrades:
+  - upgName: TestUpgrade
+    upgLevel: 1
+    upgPrice: 2
 --- !u!1 &1278467331
 GameObject:
   m_ObjectHideFlags: 0
