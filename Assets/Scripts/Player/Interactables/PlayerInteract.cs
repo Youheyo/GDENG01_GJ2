@@ -32,8 +32,11 @@ public class PlayerInteract : MonoBehaviour
 			{
 				Debug.Log("Cleaning " + raycastedObj.name);
 				//raycastedObj.SetActive(false);
+				/*
 				if (raycastedObj != null)
 					raycastedObj.GetComponent<ObjectInteracted>().onClean();
+				 */
+				raycastedObj.GetComponent<Renderer>().material.SetTexture("_DetailAlbedoMap", null);
 			}
 			//}
 		}
