@@ -28,6 +28,13 @@ public class PlayerInteract : MonoBehaviour
 					if(raycastedObj != null)
 					raycastedObj.GetComponent<ObjectInteracted>().onInteract();
 				}
+			if (Input.GetKeyDown(KeyCode.F))
+			{
+				Debug.Log("Cleaning " + raycastedObj.name);
+				//raycastedObj.SetActive(false);
+				if (raycastedObj != null)
+					raycastedObj.GetComponent<ObjectInteracted>().onClean();
+			}
 			//}
 		}
     }

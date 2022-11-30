@@ -6,7 +6,7 @@ public class DoorScript : ObjectInteracted
 {
 	private bool isOpen = false;
 	[SerializeField] Animator animator;
-
+	Material material;
 
 	public override void onInteract()
 	{
