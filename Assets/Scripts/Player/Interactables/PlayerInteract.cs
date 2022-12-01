@@ -9,6 +9,7 @@ public class PlayerInteract : MonoBehaviour
 	[SerializeField] private int rayLength = 10;
 	public Texture dirtTexture;
 	GameManager gameManager;
+	[SerializeField]ParticleSystem cleanParticleEffect;
 	//[SerializeField] private LayerMask layerMaskInteract;
 
 	private void Start()
@@ -47,6 +48,9 @@ public class PlayerInteract : MonoBehaviour
 					Debug.Log("Cleaning " + raycastedObj.name);
 					raycastedObj.GetComponent<Renderer>().material.SetTexture("_DetailAlbedoMap", null);
 					gameManager.cleanAdd(1);
+
+					cleanParticleEffect.transform.position = hit.transform.position;
+					cleanParticleEffect.Play();
 				}
 				else 
 					Debug.Log($"{raycastedObj.name} is already clean!");
