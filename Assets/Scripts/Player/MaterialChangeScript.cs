@@ -22,13 +22,19 @@ public class MaterialChangeScript : ObjectInteracted
 	// Update is called once per frame
 	void Update()
     {
-		//this.rend.sharedMaterial = material[level];
-    }
+		//this.rend.material.SetTexture("_DetailAlbedoMap", texture[level]);
+	}
 
 	public override void onClean()
 	{
 		levelUp();
 		this.rend.material.SetTexture("_DetailAlbedoMap", texture[level]);
+	}
+
+	public override void applyDirt()
+	{
+		levelDown();
+		this.rend.material.SetTexture("_DetailAlbedoMap", texture[0]);
 	}
 
 	public void levelUp()
