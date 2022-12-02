@@ -6,8 +6,10 @@ using UnityEngine;
 public class MaterialChangeScript : ObjectInteracted
 {
 	[SerializeField] private Texture[] texture;
+	[SerializeField] private int cleanScore;
 	public int level = 0;
 	Renderer rend;
+	GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +17,7 @@ public class MaterialChangeScript : ObjectInteracted
         this.rend = GetComponent<Renderer>();
 		this.rend.enabled = true;
 		this.rend.material.SetTexture("_DetailAlbedoMap", texture[level]);
-
+		gameManager = FindObjectOfType<GameManager>();
 		//this.rend.sharedMaterial = material[level];
 	}
 
@@ -42,6 +44,8 @@ public class MaterialChangeScript : ObjectInteracted
 		if (level < texture.Length)
 		{
 			this.level++;
+			if(cleanScore > 0) gameManager.cleanAdd(cleanScore);
+			else gameManager.cleanAdd(1);
 		}
 	}
 	public void levelDown()

@@ -41,32 +41,35 @@ public class PlayerInteract : MonoBehaviour
 			if (Input.GetKeyDown(KeyCode.F))
 			{
 				//raycastedObj.SetActive(false);
-				/*
+				
 				if (raycastedObj != null)
 					raycastedObj.GetComponent<ObjectInteracted>().onClean();
-				 */
-				if(raycastedObj.GetComponent<Renderer>().material.GetTexture("_DetailAlbedoMap") != null)
-				{
-					Debug.Log("Cleaning " + raycastedObj.name);
-					raycastedObj.GetComponent<Renderer>().material.SetTexture("_DetailAlbedoMap", null);
-					gameManager.cleanAdd(1);
 
 					cleanParticleEffect.transform.position = hit.transform.position;
 					cleanParticleEffect.Play();
 
 					HammerObject.GetComponent<Animator>().SetTrigger("isCleaning");
 					HammerObject.transform.position = hit.transform.position + new Vector3(0.0f,2.0f,0.0f);
+				 
+				/*
+				if(raycastedObj.GetComponent<Renderer>().material.GetTexture("_DetailAlbedoMap") != null)
+				{
+					Debug.Log("Cleaning " + raycastedObj.name);
+					raycastedObj.GetComponent<Renderer>().material.SetTexture("_DetailAlbedoMap", null);
+					gameManager.cleanAdd(1);
+
 				}
 				else 
 					Debug.Log($"{raycastedObj.name} is already clean!");
+				 */
 			}
 
 			//Put Dirt on object
 			if (Input.GetKeyDown(KeyCode.V))
 			{
 				Debug.Log("Applying Dirt on " + raycastedObj.name);
-				raycastedObj.GetComponent<Renderer>().material.SetTexture("_DetailAlbedoMap", dirtTexture);
-				//raycastedObj.GetComponent<ObjectInteracted>().applyDirt();
+				//raycastedObj.GetComponent<Renderer>().material.SetTexture("_DetailAlbedoMap", dirtTexture);
+				raycastedObj.GetComponent<ObjectInteracted>().applyDirt();
 			}
 
 		}
