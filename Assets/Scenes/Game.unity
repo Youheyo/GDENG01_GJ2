@@ -26638,7 +26638,7 @@ GameObject:
   - component: {fileID: 1569410797}
   m_Layer: 0
   m_Name: GlassDoorR
-  m_TagString: Interactable
+  m_TagString: Cleanable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
