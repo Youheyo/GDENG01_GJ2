@@ -1642,15 +1642,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5055cd54e62efc24b8535a83997fdd78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dayText: {fileID: 0}
   day: 1
-  timeText: {fileID: 0}
-  hour: 0
-  minute: 0
   gameStarted: 0
-  dayLength: 24
-  startingTime: 0
-  timeFactor: 60
+  _dayLength: 24
+  _startingTime: 6
+  _timeFactor: 60
+  _time: []
   currentTime: 0
 --- !u!1 &1967650938
 GameObject:

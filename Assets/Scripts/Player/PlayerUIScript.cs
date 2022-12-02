@@ -28,8 +28,8 @@ public class PlayerUIScript : MonoBehaviour
 	void Start()
 	{
 		// Adds the time to the TimeHandler
-		var time = timeObj.GetComponent<Time_Base>();
-		GameManager.instance.addTime(time);
+		//var time = timeObj.GetComponent<Time_Base>();
+		//GameManager.instance.addTime(time);
 	}
 
 	// Update is called once per frame

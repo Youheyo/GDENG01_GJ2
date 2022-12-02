@@ -9,18 +9,20 @@ public class TimeHandler : MonoBehaviour
 
 	[SerializeField] private bool gameStarted = false;
 
-	[SerializeField] float dayLength = 24f;
-	[SerializeField] float startingTime = 0f;
+	[SerializeField] float _dayLength = 24f;
+	[SerializeField] float _startingTime = 0f;
 
 	// 60 = 1 irl second = 1 game minute
-	[SerializeField] float timeFactor = 60f;
+	[SerializeField] float _timeFactor = 60f;
 
 	[SerializeField] List<Time_Base> _time;
+
+	public float dayLength => _dayLength;
 
 	public float currentTime = 0f;
 
 	public void startTime() {
-		currentTime = startingTime;
+		currentTime = _startingTime;
 		gameStarted = true;
 	}
 
@@ -35,7 +37,7 @@ public class TimeHandler : MonoBehaviour
 
 	void Update() {
 		if(gameStarted == true) {
-			currentTime = (dayLength + currentTime + (Time.deltaTime * timeFactor / 3600f)) % dayLength;
+			currentTime = (dayLength + currentTime + (Time.deltaTime * _timeFactor / 3600f)) % dayLength;
 			if(currentTime >= 23.99f) {
 				day++;
 				currentTime = 0f;
@@ -45,5 +47,9 @@ public class TimeHandler : MonoBehaviour
 		foreach(var times in _time) {
 			times.OnTick(currentTime);
 		}
+	}
+
+	public float getDayLength() {
+		return _dayLength;
 	}
 }
