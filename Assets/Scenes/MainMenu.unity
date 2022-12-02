@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465878, g: 0.4964224, b: 0.57482475, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2090,6 +2090,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1809648956}
   - component: {fileID: 1809648955}
+  - component: {fileID: 1809648957}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2115,10 +2116,12 @@ MonoBehaviour:
   maxPrintAmt: 1
   maxManualPrintSpeed: 30
   maxManualPrintAmt: 1
+  maxCleanLevel: 5
   printSpeedLvl: 1
   printAmtLvl: 1
   manualPrintSpeedLvl: 1
   manualPrintAmtLvl: 1
+  cleanScoreMultiplier: 1
 --- !u!4 &1809648956
 Transform:
   m_ObjectHideFlags: 0
@@ -2134,6 +2137,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1809648957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809648954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5055cd54e62efc24b8535a83997fdd78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  day: 1
+  gameStarted: 0
+  _dayLength: 24
+  _startingTime: 6
+  _timeFactor: 60
+  _time: []
+  currentTime: 0
 --- !u!1 &1867134336
 GameObject:
   m_ObjectHideFlags: 0
