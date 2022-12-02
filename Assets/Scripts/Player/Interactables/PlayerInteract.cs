@@ -51,10 +51,12 @@ public class PlayerInteract : MonoBehaviour
 			//Interact 
 				if (Input.GetKeyDown(KeyCode.E))
 				{
-					Debug.Log("Interacted with " + raycastedObj.name);
 					//raycastedObj.SetActive(false);
 					if(raycastedObj != null)
+					{
+					Debug.Log("Interacted with " + raycastedObj.name);
 					raycastedObj.GetComponent<ObjectInteracted>().onInteract();
+					}
 				}
 
 				if(Input.GetMouseButtonDown(0)) {

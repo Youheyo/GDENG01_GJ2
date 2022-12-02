@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class MaterialChangeScript : ObjectInteracted
@@ -22,12 +23,16 @@ public class MaterialChangeScript : ObjectInteracted
 		this.rend.enabled = true;
 		this.rend.material.SetTexture("_DetailAlbedoMap", texture[level]);
 
-		this.gameObject.tag = "Cleanable";
+		if(this.gameObject.tag != "Interactable")
+		{
+			this.gameObject.tag = "Cleanable";
+		}
 		this.dirtTimer = Random.Range(10.0f, 30.0f);
-
 		//Insurance to get texture and avoid setting it over and over again
-		if (this.texture[0] == null) {
+		if (this.texture.Length == 0)
+		{
 			this.texture[0] = this.rend.material.GetTexture("_DetailAlbedoMap");
+			this.texture[1] = null;
 		}
 
 	}
@@ -66,7 +71,7 @@ public class MaterialChangeScript : ObjectInteracted
 			gameManager.cleanAdd(1);
 			this.rend.material.SetTexture("_DetailAlbedoMap", texture[level]);
 			this.isDirty = false;
-			this.gameObject.tag = "Untagged";
+			if (this.gameObject.tag != "Interactable") this.gameObject.tag = "Untagged";
 
 		}
 	}
@@ -77,7 +82,7 @@ public class MaterialChangeScript : ObjectInteracted
 			this.level--;
 			this.rend.material.SetTexture("_DetailAlbedoMap", texture[0]);
 			this.isDirty = true;
-			this.gameObject.tag = "Cleanable";
+			if (this.gameObject.tag != "Interactable") this.gameObject.tag = "Cleanable";
 		}
 	}
 }

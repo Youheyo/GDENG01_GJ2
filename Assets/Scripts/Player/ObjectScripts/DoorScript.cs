@@ -12,12 +12,12 @@ public class DoorScript : ObjectInteracted
 	{
 		if (isOpen)
 		{
-			isOpen = !isOpen;
+			this.isOpen = false;
 			animator.SetBool("isOpen", false);
 		}
 		else
 		{
-			isOpen = !isOpen;
+			this.isOpen = true;
 			animator.SetBool("isOpen", true);
 		}
 	}
