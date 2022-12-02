@@ -5,7 +5,6 @@ using UnityEngine;
 public class MaterialChangeScript : ObjectInteracted
 {
 	[SerializeField] private Texture[] texture;
-	[SerializeField] private int cleanScore;
 	public int level = 0;
 	Renderer rend;
 	GameManager gameManager;
@@ -17,24 +16,35 @@ public class MaterialChangeScript : ObjectInteracted
     // Start is called before the first frame update
     void Start()
     {
+		gameManager = FindObjectOfType<GameManager>();
+
         this.rend = GetComponent<Renderer>();
 		this.rend.enabled = true;
 		this.rend.material.SetTexture("_DetailAlbedoMap", texture[level]);
-		gameManager = FindObjectOfType<GameManager>();
-		//this.rend.sharedMaterial = material[level];
+
 		this.gameObject.tag = "Cleanable";
+		this.dirtTimer = Random.Range(10.0f, 30.0f);
+
+		//Insurance to get texture and avoid setting it over and over again
+		if (this.texture[0] == null) {
+			this.texture[0] = this.rend.material.GetTexture("_DetailAlbedoMap");
+		}
+
 	}
 
 	// Update is called once per frame
 	void Update()
     {
 		//this.rend.material.SetTexture("_DetailAlbedoMap", texture[level]);
-		Timer += Time.deltaTime;
-		if(Timer > dirtTimer)
+		if (!isDirty)
 		{
-			Timer = 0;
-			dirtTimer = Random.Range(10.0f, 30.0f);
-			this.applyDirt();
+			Timer += Time.deltaTime;
+			if(Timer > dirtTimer)
+			{
+				Timer = 0;
+				this.dirtTimer = Random.Range(10.0f, 30.0f);
+				this.applyDirt();
+			}
 		}
 	}
 
@@ -53,8 +63,7 @@ public class MaterialChangeScript : ObjectInteracted
 		if (level < texture.Length)
 		{
 			this.level++;
-			if(cleanScore > 0) gameManager.cleanAdd(cleanScore);
-			else gameManager.cleanAdd(1);
+			gameManager.cleanAdd(1);
 			this.rend.material.SetTexture("_DetailAlbedoMap", texture[level]);
 			this.isDirty = false;
 			this.gameObject.tag = "Untagged";
