@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 
@@ -17,6 +18,11 @@ public class PlayerInteract : MonoBehaviour
 	[SerializeField] private GameObject upgradeItem;
 	// Very quick fix, not really good coding standards but we'll have to make do.
 	private bool raycastOff = false;
+
+	public Texture dirtTexture;
+	GameManager gameManager;
+	[SerializeField] ParticleSystem cleanParticleEffect;
+	[SerializeField] GameObject HammerObject;
 	//[SerializeField] private LayerMask layerMaskInteract;
 	
 	void Awake() {
@@ -24,8 +30,13 @@ public class PlayerInteract : MonoBehaviour
 
 	}
 
-    // Update is called once per frame
-    void Update()
+	private void Start()
+	{
+		gameManager = FindObjectOfType<GameManager>();
+	}
+
+	// Update is called once per frame
+	void Update()
     {
         RaycastHit hit;
 		Vector3 fwd = transform.TransformDirection(Vector3.forward);
@@ -35,7 +46,8 @@ public class PlayerInteract : MonoBehaviour
 			if (hit.collider.CompareTag("Interactable"))
 			{
 				raycastedObj = hit.collider.gameObject;
-
+				
+			//Interact 
 				if (Input.GetKeyDown(KeyCode.E))
 				{
 					Debug.Log("Interacted with " + raycastedObj.name);
@@ -56,8 +68,58 @@ public class PlayerInteract : MonoBehaviour
 					}
 				} 
 			}
+      
+			//Clean Button by making object change
+			if (Input.GetKeyDown(KeyCode.F))
+			{
+				//raycastedObj.SetActive(false);
+				
+				if (raycastedObj != null)
+					raycastedObj.GetComponent<ObjectInteracted>().onClean();
+
+					cleanParticleEffect.transform.position = hit.transform.position;
+					cleanParticleEffect.Play();
+
+					HammerObject.GetComponent<Animator>().SetTrigger("isCleaning");
+					HammerObject.transform.position = hit.transform.position + new Vector3(0.0f,2.0f,0.0f);
+				 
+			}
+
+			//Clean by changing it directly
+			if (Input.GetKeyDown(KeyCode.R))
+			{
+				//raycastedObj.SetActive(false);
+
+				if(raycastedObj.GetComponent<Renderer>().material.GetTexture("_DetailAlbedoMap") != null)
+				{
+					Debug.Log("Cleaning " + raycastedObj.name);
+					raycastedObj.GetComponent<Renderer>().material.SetTexture("_DetailAlbedoMap", null);
+					gameManager.cleanAdd(1);
+					cleanParticleEffect.transform.position = hit.transform.position;
+					cleanParticleEffect.Play();
+
+					HammerObject.GetComponent<Animator>().SetTrigger("isCleaning");
+					HammerObject.transform.position = hit.transform.position + new Vector3(0.0f,2.0f,0.0f);
+
+				}
+				else 
+					Debug.Log($"{raycastedObj.name} is already clean!");
+			}
+
+			//Put Dirt on object
+			if (Input.GetKeyDown(KeyCode.T))
+			{
+				Debug.Log("Applying Dirt on " + raycastedObj.name);
+				raycastedObj.GetComponent<Renderer>().material.SetTexture("_DetailAlbedoMap", dirtTexture);
+			}
+			//Put Dirt on object by script
+			if (Input.GetKeyDown(KeyCode.G))
+			{
+				Debug.Log("Applying Dirt on " + raycastedObj.name);
+				raycastedObj.GetComponent<ObjectInteracted>().applyDirt();
+			}
 		}
-    }
+  }
 
 	void OnDrawGizmosSelected()
 	{

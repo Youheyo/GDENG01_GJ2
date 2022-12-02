@@ -10,6 +10,16 @@ public class ObjectInteracted : MonoBehaviour
 		
 	}
 
+	virtual public void onClean()
+	{
+
+	}
+
+	virtual public void applyDirt()
+	{
+
+	}
+
 	void Awake()
 	{
 		if(objName.Length <= 0) {
