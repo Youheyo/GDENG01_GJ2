@@ -9546,6 +9546,8 @@ GameObject:
   m_Component:
   - component: {fileID: 808840264}
   - component: {fileID: 808840263}
+  - component: {fileID: 808840266}
+  - component: {fileID: 808840265}
   m_Layer: 0
   m_Name: SceneHandler
   m_TagString: Untagged
@@ -9567,6 +9569,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeObj: {fileID: 2129019496}
   lightTimeObj: {fileID: 44298352}
+  skyboxObj: {fileID: 808840266}
 --- !u!4 &808840264
 Transform:
   m_ObjectHideFlags: 0
@@ -9582,6 +9585,283 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &808840265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808840262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a1cfe941152493418df4c8d5e1f019c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LinkedLight: {fileID: 44298353}
+  sunriseTime: 6
+  sunsetTime: 18
+  lightColour_Day:
+    serializedVersion: 2
+    key0: {r: 0.7122642, g: 0.9999999, b: 1, a: 1}
+    key1: {r: 0.9944, g: 1, b: 0.6745283, a: 1}
+    key2: {r: 1, g: 0.7311321, b: 0.9949918, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 32768
+    ctime2: 65535
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2
+  lightColour_Night:
+    serializedVersion: 2
+    key0: {r: 1, g: 0.7294118, b: 0.99607843, a: 1}
+    key1: {r: 0.16264148, g: 0.08139017, b: 0.2924528, a: 1}
+    key2: {r: 0.7137255, g: 1, b: 1, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 32768
+    ctime2: 65535
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2
+  lightIntensity_Day:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
+      inSlope: -0.00000038317273
+      outSlope: -0.00000038317273
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.7
+    - serializedVersion: 3
+      time: 0.5
+      value: 1.25
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.5
+      inSlope: -0.015644258
+      outSlope: -0.015644258
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.51666665
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  lightIntensity_Night:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.35
+      inSlope: -0.00000038317273
+      outSlope: -0.00000038317273
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.7
+    - serializedVersion: 3
+      time: 0.5
+      value: 0.25
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.35
+      inSlope: -0.015644258
+      outSlope: -0.015644258
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.51666665
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &808840266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808840262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034a55f9b910f4334a7e948a4b5b9025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sunriseTime: 6
+  sunsetTime: 18
+  skyTint_Day:
+    serializedVersion: 2
+    key0: {r: 0.7122642, g: 0.9999999, b: 1, a: 1}
+    key1: {r: 0.9944, g: 1, b: 0.6745283, a: 1}
+    key2: {r: 1, g: 0.7311321, b: 0.9949918, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 32768
+    ctime2: 65535
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2
+  skyTint_Night:
+    serializedVersion: 2
+    key0: {r: 1, g: 0.7294118, b: 0.99607843, a: 1}
+    key1: {r: 0.16264148, g: 0.08139017, b: 0.2924528, a: 1}
+    key2: {r: 0.7137255, g: 1, b: 1, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 32768
+    ctime2: 65535
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2
+  exposure_Day:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
+      inSlope: -0.00000038317273
+      outSlope: -0.00000038317273
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.7
+    - serializedVersion: 3
+      time: 0.5
+      value: 1.25
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.5
+      inSlope: -0.015644258
+      outSlope: -0.015644258
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.51666665
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  exposure_Night:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.35
+      inSlope: -0.00000038317273
+      outSlope: -0.00000038317273
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.7
+    - serializedVersion: 3
+      time: 0.5
+      value: 0.25
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.35
+      inSlope: -0.015644258
+      outSlope: -0.015644258
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.51666665
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &824776512
 GameObject:
   m_ObjectHideFlags: 0

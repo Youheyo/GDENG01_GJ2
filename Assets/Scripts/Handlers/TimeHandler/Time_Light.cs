@@ -19,7 +19,6 @@ public class Time_Light : Time_Base
 	void Awake() {
 		daylightLength = sunsetTime - sunriseTime;
 		nightLength = sunriseTime + (GameManager.instance.getDayLength() - sunsetTime);
-		Debug.Log("DayLength: " + GameManager.instance.getDayLength());
 	}
 
 	public override void OnTick(float currentTime) {

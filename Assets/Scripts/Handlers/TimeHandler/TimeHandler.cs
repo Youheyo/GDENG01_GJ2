@@ -19,6 +19,8 @@ public class TimeHandler : MonoBehaviour
 
 	public float dayLength => _dayLength;
 
+	public float deltaTime => Time.deltaTime * _timeFactor / 3600f;
+
 	public float currentTime = 0f;
 
 	public void startTime() {

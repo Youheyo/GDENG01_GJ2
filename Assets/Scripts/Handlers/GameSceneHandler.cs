@@ -6,6 +6,7 @@ public class GameSceneHandler : MonoBehaviour
 {
 	[SerializeField] private GameObject timeObj;
 	[SerializeField] private GameObject lightTimeObj;
+	[SerializeField] private Time_Base skyboxObj;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +17,9 @@ public class GameSceneHandler : MonoBehaviour
 	GameManager.instance.addTime(time);
 	// Directional Light Time
 	time = lightTimeObj.GetComponent<Time_Base>();
+	GameManager.instance.addTime(time);
+	// Skybox Light Time
+	time = skyboxObj;
 	GameManager.instance.addTime(time);
     }
 
