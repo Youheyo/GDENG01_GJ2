@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class PlayerInteract : MonoBehaviour
@@ -9,7 +10,8 @@ public class PlayerInteract : MonoBehaviour
 	[SerializeField] private int rayLength = 10;
 	public Texture dirtTexture;
 	GameManager gameManager;
-	[SerializeField]ParticleSystem cleanParticleEffect;
+	[SerializeField] ParticleSystem cleanParticleEffect;
+	[SerializeField] GameObject HammerObject;
 	//[SerializeField] private LayerMask layerMaskInteract;
 
 	private void Start()
@@ -51,6 +53,9 @@ public class PlayerInteract : MonoBehaviour
 
 					cleanParticleEffect.transform.position = hit.transform.position;
 					cleanParticleEffect.Play();
+
+					HammerObject.GetComponent<Animator>().SetTrigger("isCleaning");
+					HammerObject.transform.position = hit.transform.position + new Vector3(0.0f,2.0f,0.0f);
 				}
 				else 
 					Debug.Log($"{raycastedObj.name} is already clean!");
