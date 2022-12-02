@@ -11,6 +11,7 @@ public class ReticleScript : MonoBehaviour
     [SerializeField] private Image reticle;
     [SerializeField] private Color activeColor;
     [SerializeField] private Color inactiveColor;
+    [SerializeField] private Color dirtyColor;
 
     [Tooltip("Must be same as: GrabScript")]
     [SerializeField] private float maxReach = 20f;
@@ -26,40 +27,58 @@ public class ReticleScript : MonoBehaviour
     private void Update()
     {
         RaycastHit hit;
-        if (Physics.Raycast(camera.position, camera.forward, out hit, maxReach) &&
-            hit.transform.gameObject.CompareTag("Interactable"))
-        {
+		if (Physics.Raycast(camera.position, camera.forward, out hit, maxReach) &&
+			hit.transform.gameObject.CompareTag("Interactable"))
+		{
 			hitObj = hit.transform.gameObject;
 
-            if (!hit.transform.gameObject.GetComponent<Outline>())
-                hit.transform.gameObject.AddComponent<Outline>();
-            else if (hit.transform.gameObject.GetComponent<Outline>().OutlineColor != inactiveColor && !Input.GetMouseButton(0))
-                hit.transform.gameObject.GetComponent<Outline>().OutlineColor = inactiveColor;
+			if (!hit.transform.gameObject.GetComponent<Outline>())
+				hit.transform.gameObject.AddComponent<Outline>();
+			else if (hit.transform.gameObject.GetComponent<Outline>().OutlineColor != inactiveColor && !Input.GetMouseButton(0))
+				hit.transform.gameObject.GetComponent<Outline>().OutlineColor = inactiveColor;
 
 
-            if (!hit.transform.gameObject.GetComponent<outlinescript>())
-                hit.transform.gameObject.AddComponent<outlinescript>();
+			if (!hit.transform.gameObject.GetComponent<outlinescript>())
+				hit.transform.gameObject.AddComponent<outlinescript>();
 
-            if (!hit.transform.gameObject.GetComponent<Outline>().enabled)
-                hit.transform.gameObject.GetComponent<Outline>().enabled = true;
+			if (!hit.transform.gameObject.GetComponent<Outline>().enabled)
+				hit.transform.gameObject.GetComponent<Outline>().enabled = true;
 
-            hit.transform.gameObject.GetComponent<Outline>().OutlineWidth = 11f;
+			hit.transform.gameObject.GetComponent<Outline>().OutlineWidth = 11f;
 
-            if (Input.GetMouseButton(0))
-            {
-                hit.transform.gameObject.GetComponent<Outline>().OutlineColor = activeColor;
-            }
-            else
-            {
-                hit.transform.gameObject.GetComponent<Outline>().OutlineColor = inactiveColor;
-            }
-	    hit.transform.gameObject.GetComponent<outlinescript>().AssureOutline();
+			if (Input.GetMouseButton(0))
+			{
+				hit.transform.gameObject.GetComponent<Outline>().OutlineColor = activeColor;
+			}
+			else
+			{
+				hit.transform.gameObject.GetComponent<Outline>().OutlineColor = inactiveColor;
+			}
+			hit.transform.gameObject.GetComponent<outlinescript>().AssureOutline();
 
-        }
-        else
-        {
-				
-			if(hitObj != null)
+		}
+		else if (Physics.Raycast(camera.position, camera.forward, out hit, maxReach) &&
+			hit.transform.gameObject.CompareTag("Cleanable"))
+		{
+			hitObj = hit.transform.gameObject;
+
+			if (!hit.transform.gameObject.GetComponent<Outline>())
+				hit.transform.gameObject.AddComponent<Outline>();
+
+			if (!hit.transform.gameObject.GetComponent<outlinescript>())
+				hit.transform.gameObject.AddComponent<outlinescript>();
+
+			if (!hit.transform.gameObject.GetComponent<Outline>().enabled)
+				hit.transform.gameObject.GetComponent<Outline>().enabled = true;
+
+			hit.transform.gameObject.GetComponent<Outline>().OutlineColor = dirtyColor;
+
+			hit.transform.gameObject.GetComponent<outlinescript>().AssureOutline();
+		}
+		else
+		{
+
+			if (hitObj != null)
 			{
 
 				hitObj.transform.gameObject.GetComponent<Outline>().enabled = false;
@@ -68,8 +87,8 @@ public class ReticleScript : MonoBehaviour
 			}
 
 
-            //hit.transform.gameObject.GetComponent<Outline>().enabled = false;
-            //reticle.color = new Color(inactiveColor.r, inactiveColor.g, inactiveColor.b, inactiveColor.a);
-        }
+			//hit.transform.gameObject.GetComponent<Outline>().enabled = false;
+			//reticle.color = new Color(inactiveColor.r, inactiveColor.g, inactiveColor.b, inactiveColor.a);
+		}
     }
 }

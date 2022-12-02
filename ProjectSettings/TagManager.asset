@@ -5,8 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - CinemachineTarget
-  - vaultObj
   - Interactable
+  - Cleanable
   layers:
   - Default
   - TransparentFX
