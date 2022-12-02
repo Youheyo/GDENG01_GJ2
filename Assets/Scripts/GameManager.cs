@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
 		sharedInstance = this;
 		DontDestroyOnLoad(gameObject);
 	}
-	
+
 	// Only use for debugging purposes or somehow anything that needs to be actively checked
 	void Update(){
 		if(Input.GetKeyDown(KeyCode.O)) {
@@ -65,6 +65,19 @@ public class GameManager : MonoBehaviour
 			Debug.Log("[DEBUG] - Increase Cleanliness");
 			cleanCountAmt++;
 		}
+	}
+
+	public void startGame() {
+		gameObject.GetComponent<TimeHandler>().startTime();
+	}
+
+	// Functions related to time
+	public void addTime(Time_Base time) {
+		gameObject.GetComponent<TimeHandler>().addTime(time);
+	}
+
+	public float getDayLength() {
+		return gameObject.GetComponent<TimeHandler>().getDayLength();
 	}
 
 	// Functions relating to player resources

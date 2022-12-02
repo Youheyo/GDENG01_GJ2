@@ -11,6 +11,7 @@ public class PlayerUIScript : MonoBehaviour
 	[SerializeField] private TMP_Text cleanText;
 	[SerializeField] private GameObject pausePanel;
 	[SerializeField] private GameObject upgradePanel;
+	[SerializeField] private GameObject timeObj;
 
 	private int moneyCount = 0;
 	private int cleanCount = 0;
@@ -26,6 +27,9 @@ public class PlayerUIScript : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
+		// Adds the time to the TimeHandler
+		//var time = timeObj.GetComponent<Time_Base>();
+		//GameManager.instance.addTime(time);
 	}
 
 	// Update is called once per frame
