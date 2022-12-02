@@ -16,15 +16,13 @@ public class TimeHandler : MonoBehaviour
 		minute += Time.deltaTime;
 		if (minute >= 60)
 		{
-			if (hour >= 24)
+			hour++;
+			if (hour > 23)
 			{
 				hour = 0;
 				day++;
 			}
-			else
-			{
-				hour++;
-			}
+			minute = 0;
 		}
 		dayText.text = $"Day : {day}";
 
