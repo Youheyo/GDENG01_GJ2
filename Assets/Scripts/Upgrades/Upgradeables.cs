@@ -4,27 +4,59 @@ using UnityEngine;
 
 public class Upgradeables : MonoBehaviour
 {
+	/* // Dictionary Approach to stats
+	   // Do not delete, might be used later in the future
+	[System.Serializable]
+	public class _statint {
+		[SerializeField] public string statName;
+		[SerializeField] public int statVal;
+	}
+
+	[SerializeField] public _statint[] statsInt;
+	public Dictionary<string,int> statIntDict = new Dictionary<string,int>();
+
+	[System.Serializable]
+	public class _statfloat {
+		[SerializeField] public string statName;
+		[SerializeField] public int statVal;
+	}
+
+	[SerializeField] public _statfloat[] statsFloat;
+	public Dictionary<string,float> statFloatDict = new Dictionary<string,float>();
+	*/
+
 	[System.Serializable]
 	public class _upgrade {
 		[SerializeField] public string upgName;
-		[SerializeField] public int upgLevel;
 		[SerializeField] public int upgPrice;
+		[SerializeField] public string upgStatVar;
 	}
 
 	[SerializeField] public _upgrade[] upgrades;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	/*
+	public void initDict() {
+		if(statsInt.Length > 0){
+			foreach(Upgradeables._statint stat in statsInt){
+				statIntDict.Add(stat.statName, stat.statVal);
+			}
+			Debug.Log("Before Dict: " + statIntDict.Count);
+		}
+		if(statsFloat.Length > 0) {
+			foreach(Upgradeables._statfloat stat in statsFloat){
+				statFloatDict.Add(stat.statName, stat.statVal);
+			}
+		}
+
+	}
+	*/
 
 	public void test() {
 		Debug.Log("Test worked");
+	}
+
+	public virtual void applyUpgrades(string upgVar, int upgPrice) {
+		Debug.Log("upgVar is: " + upgVar);
+		Debug.Log("upgPrice is: " + upgPrice);
 	}
 }

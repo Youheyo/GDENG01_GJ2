@@ -34,9 +34,9 @@ public class GameManager : MonoBehaviour
 
 	[Header("Money Maker Upgrade Levels")]
 	[SerializeField] private int printSpeedLvl = 1;
-	[SerializeField] private int printAmt = 1;
-	[SerializeField] private int manualPrintDelay = 1;
-	[SerializeField] private int manualPrintAmt = 1;
+	[SerializeField] private int printAmtLvl = 1;
+	[SerializeField] private int manualPrintSpeedLvl = 1;
+	[SerializeField] private int manualPrintAmtLvl = 1;
 	
 	// Declare functions here
 	private void Awake() {
@@ -98,5 +98,61 @@ public class GameManager : MonoBehaviour
 		return maxManualPrintAmt;
 	}
 
+	// A bunch of setter functions for money maker
 
+	public void setMaxPSpeed(float val) {
+		maxPrintSpeed = val;
+	}
+
+	public void setMaxPAmt(int val) {
+		maxPrintAmt = val;
+	}
+
+	public void setMaxMPSpeed(float val) {
+		maxManualPrintSpeed = val;
+	}
+
+	public void setMaxMPAmt(int val) {
+		maxManualPrintAmt = val;
+	}
+
+	// A bunch of getter functions for money maker
+
+	public int getPSpeedLvl() {
+		return printSpeedLvl;
+	}
+
+	public int getPAmtLvl() {
+		return printAmtLvl;
+	}
+
+	public int getMPSpeedLvl() {
+		return manualPrintSpeedLvl;
+	}
+
+	public int getMPAmtLvl() {
+		return manualPrintAmtLvl;
+	}
+
+	// A bunch of upgrade functions for money maker
+
+	public void upgMaxPSpeed() {
+		if(printSpeedLvl < 4)
+		printSpeedLvl++;
+	}
+
+	public void upgMaxPAmt() {
+		if(printAmtLvl < 4)
+		printAmtLvl++;
+	}
+
+	public void upgMaxMPSpeed() {
+		if(manualPrintSpeedLvl < 4)
+		manualPrintSpeedLvl++;
+	}
+
+	public void upgMaxMPAmt() {
+		if(manualPrintAmtLvl < 4)
+		manualPrintAmtLvl++;
+	}
 }

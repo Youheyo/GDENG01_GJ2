@@ -11,8 +11,11 @@ public class PlayerInteract : MonoBehaviour
 	[SerializeField] private int rayLength = 10;
 	private GameObject interactedObj;
 	[SerializeField] private PlayerUIScript ui;
+
+	[Header("Upgrade Stuff")]
 	[SerializeField] private GameObject upgradePanel;
 	[SerializeField] private TMP_Text noUpgrades;
+	[SerializeField] private GameObject upgradeItem;
 	// Very quick fix, not really good coding standards but we'll have to make do.
 	private bool raycastOff = false;
 	//[SerializeField] private LayerMask layerMaskInteract;
@@ -83,6 +86,9 @@ public class PlayerInteract : MonoBehaviour
 	}
 
 	public void closeUpgrade() {
+		foreach(Transform child in upgradePanel.transform.Find("upgContainer").transform) {
+			Destroy(child.gameObject);
+		}
 		Time.timeScale = 1.0f;
 		upgradePanel.SetActive(false);
 		Cursor.visible = false;
@@ -93,11 +99,23 @@ public class PlayerInteract : MonoBehaviour
 	public void fillUpgrades(Upgradeables upg) {
 		if(upg.upgrades.Length > 0) {
 			//noUpgrades.GetComponent<MeshRenderer>().enabled = false;
-			noUpgrades.text = "Has upgrades";
+			noUpgrades.text = string.Empty;
+			foreach(Upgradeables._upgrade _upg in upg.upgrades) {
+				var upgItem = Instantiate(upgradeItem, upgradePanel.transform.Find("upgContainer").transform);
+				upgItem.transform.Find("upgradeName").GetComponent<TMP_Text>().text = _upg.upgName;
+				upgItem.transform.Find("upgradePrice").GetComponent<TMP_Text>().text = " - " + _upg.upgPrice;
+				var button = upgItem.transform.Find("upgradeButton").GetComponent<Button>();
+				button.onClick.AddListener(delegate {interactedObj.GetComponent<Upgradeables>().applyUpgrades(_upg.upgStatVar, _upg.upgPrice);});
+			}
 		} else {
 			//noUpgrades.GetComponent<MeshRenderer>().enabled = true;
-			noUpgrades.text = string.Empty;
+			noUpgrades.text = "No Further Upgrades Available";
 		}
+	}
+
+	public void applyButton() {
+		//Debug.Log("Working");
+		//interactedObj.GetComponent<Upgradeables>().applyUpgrades(upgStatVar);
 	}
 
 }
