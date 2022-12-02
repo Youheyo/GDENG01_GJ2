@@ -33474,6 +33474,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6072016787038219206, guid: 532a6cf18b11a594bb39696840f3447d, type: 3}
+      propertyPath: dirtyColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6072016787038219206, guid: 532a6cf18b11a594bb39696840f3447d, type: 3}
       propertyPath: dirtyColor.b
       value: 0
       objectReference: {fileID: 0}
