@@ -17,6 +17,10 @@ public class MoneyMakerScript : Upgradeables
 
 	[Header("Money Maker Misc. Variables")]
 	private bool isManual = false;
+
+	[Header("Effects")]
+	[SerializeField] ParticleSystem particle;
+	[SerializeField] private Animator mmAnimator;
 	
 	// Start is called before the first frame update
 	void Start()
@@ -34,6 +38,7 @@ public class MoneyMakerScript : Upgradeables
 		// Initialize Counters
 		printSpeed = maxPrintSpeed;
 		manualPrintSpeed = maxManualPrintSpeed;
+		mmAnimator = GetComponent<Animator>();
 	}
 
 	public void initStats() {
@@ -64,6 +69,8 @@ public class MoneyMakerScript : Upgradeables
 
 	public void manualEnable(){
 		isManual = true;
+		mmAnimator.SetTrigger("manual");
+		particle.Play();
 	}
 
  	public override void applyUpgrades(Upgradeables._upgrade upg, TMP_Text priceText) {
