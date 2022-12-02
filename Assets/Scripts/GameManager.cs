@@ -49,6 +49,14 @@ public class GameManager : MonoBehaviour
 		sharedInstance = this;
 		DontDestroyOnLoad(gameObject);
 	}
+
+	public void startGame() {
+		gameObject.GetComponent<TimeHandler>().startTime();
+	}
+
+	public void addTime(Time_Base time) {
+		gameObject.GetComponent<TimeHandler>().addTime(time);
+	}
 	
 	// Only use for debugging purposes or somehow anything that needs to be actively checked
 	void Update(){
