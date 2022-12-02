@@ -30,6 +30,9 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private float maxManualPrintSpeed = 30.0f;
 	[SerializeField] private int maxManualPrintAmt = 1;
 
+	[Header("Cleaning Stat")]
+	[SerializeField] private float maxCleanLevel = 5.0f;
+
 	[Header("Upgrade Levels")]
 
 	[Header("Money Maker Upgrade Levels")]
@@ -38,6 +41,8 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private int manualPrintSpeedLvl = 1;
 	[SerializeField] private int manualPrintAmtLvl = 1;
 	
+	[Header("Money Maker Upgrade Levels")]
+	[SerializeField] private float cleanScoreMultiplier = 1;
 	// Declare functions here
 	private void Awake() {
 		if(GameManager.instance != null) {
@@ -73,7 +78,7 @@ public class GameManager : MonoBehaviour
 	}
 
 	public void cleanAdd(int amt) {
-		cleanCountAmt += amt;
+		cleanCountAmt += (int)(amt * cleanScoreMultiplier);
 	}
 
 	public int getCleanAmt() {
@@ -163,6 +168,29 @@ public class GameManager : MonoBehaviour
 	public bool upgMaxMPAmt() {
 		if(manualPrintAmtLvl < 4) {
 			manualPrintAmtLvl++;
+			return true;
+		}
+		return false;
+	}
+
+
+	public void setMaxCleanLevel(int val)
+	{
+		maxCleanLevel = val;
+	}
+
+	public float getMaxCleanLevel() { 
+		return maxCleanLevel;
+	}	
+	public float getCleanLevel() { 
+		return cleanScoreMultiplier;
+	}
+
+	public bool upgMaxCleanLevel()
+	{
+		if(cleanScoreMultiplier < 4)
+		{
+			cleanScoreMultiplier++;
 			return true;
 		}
 		return false;

@@ -51,10 +51,12 @@ public class PlayerInteract : MonoBehaviour
 			//Interact 
 				if (Input.GetKeyDown(KeyCode.E))
 				{
-					Debug.Log("Interacted with " + raycastedObj.name);
 					//raycastedObj.SetActive(false);
 					if(raycastedObj != null)
+					{
+					Debug.Log("Interacted with " + raycastedObj.name);
 					raycastedObj.GetComponent<ObjectInteracted>().onInteract();
+					}
 				}
 
 				if(Input.GetMouseButtonDown(0)) {
@@ -74,45 +76,21 @@ public class PlayerInteract : MonoBehaviour
 			if (Input.GetKeyDown(KeyCode.F))
 			{
 				//raycastedObj.SetActive(false);
-				
-				if (raycastedObj != null)
+				raycastedObj.TryGetComponent(out MaterialChangeScript changeScript);
+				if (raycastedObj != null && changeScript.isDirty)
+				{
+					
 					raycastedObj.GetComponent<ObjectInteracted>().onClean();
 
 					cleanParticleEffect.transform.position = hit.transform.position;
 					cleanParticleEffect.Play();
 
 					HammerObject.GetComponent<Animator>().SetTrigger("isCleaning");
-					HammerObject.transform.position = hit.transform.position + new Vector3(0.0f,2.0f,0.0f);
+					HammerObject.transform.position = hit.transform.position + new Vector3(0.0f,1.0f,0.0f);
+				}
 				 
 			}
-
-			//Clean by changing it directly
-			if (Input.GetKeyDown(KeyCode.R))
-			{
-				//raycastedObj.SetActive(false);
-
-				if(raycastedObj.GetComponent<Renderer>().material.GetTexture("_DetailAlbedoMap") != null)
-				{
-					Debug.Log("Cleaning " + raycastedObj.name);
-					raycastedObj.GetComponent<Renderer>().material.SetTexture("_DetailAlbedoMap", null);
-					gameManager.cleanAdd(1);
-					cleanParticleEffect.transform.position = hit.transform.position;
-					cleanParticleEffect.Play();
-
-					HammerObject.GetComponent<Animator>().SetTrigger("isCleaning");
-					HammerObject.transform.position = hit.transform.position + new Vector3(0.0f,2.0f,0.0f);
-
-				}
-				else 
-					Debug.Log($"{raycastedObj.name} is already clean!");
-			}
-
-			//Put Dirt on object
-			if (Input.GetKeyDown(KeyCode.T))
-			{
-				Debug.Log("Applying Dirt on " + raycastedObj.name);
-				raycastedObj.GetComponent<Renderer>().material.SetTexture("_DetailAlbedoMap", dirtTexture);
-			}
+			//FOR DEBUG ONLY
 			//Put Dirt on object by script
 			if (Input.GetKeyDown(KeyCode.G))
 			{
