@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 1185547482854349338}
   m_Layer: 0
   m_Name: Door
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -359,6 +359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eeb6400c1b314a41a8db665bf27e718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objName: 
   animator: {fileID: 1185547482854349338}
 --- !u!95 &1185547482854349338
 Animator:

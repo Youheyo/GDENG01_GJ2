@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.46630108, g: 0.47987074, b: 0.4922704, a: 1}
+  m_IndirectSpecularColor: {r: 0.46765316, g: 0.47983313, b: 0.49222004, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-21528
+  m_Name: pb_Mesh-19536
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -723,6 +723,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1 &44298352
 GameObject:
   m_ObjectHideFlags: 0
@@ -2125,6 +2126,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!114 &132408001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2143,6 +2145,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!114 &147273460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2276,6 +2279,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!43 &164510349
 Mesh:
   m_ObjectHideFlags: 0
@@ -2458,6 +2462,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!43 &190562851
 Mesh:
   m_ObjectHideFlags: 0
@@ -3020,6 +3025,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!65 &217260592
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4295,6 +4301,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!43 &335084419
 Mesh:
   m_ObjectHideFlags: 0
@@ -4822,6 +4829,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1001 &341502469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4913,6 +4921,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1001 &354998518
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5004,6 +5013,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!43 &383221905
 Mesh:
   m_ObjectHideFlags: 0
@@ -5186,6 +5196,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!4 &422339968 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1369345722980405988, guid: d46fa1eeedbcb0e41b8c735b2594b434, type: 3}
@@ -5628,6 +5639,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1001 &496898740
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5693,7 +5705,7 @@ PrefabInstance:
       objectReference: {fileID: 891614109}
     - target: {fileID: 1185547482854349348, guid: 1d023d41cc1791a458162234c2581579, type: 3}
       propertyPath: m_VersionIndex
-      value: 3159
+      value: 3162
       objectReference: {fileID: 0}
     - target: {fileID: 1185547482854349348, guid: 1d023d41cc1791a458162234c2581579, type: 3}
       propertyPath: m_SelectedEdges.Array.size
@@ -5729,7 +5741,7 @@ PrefabInstance:
       objectReference: {fileID: 1317705109}
     - target: {fileID: 1185547484621788325, guid: 1d023d41cc1791a458162234c2581579, type: 3}
       propertyPath: m_VersionIndex
-      value: 603
+      value: 606
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d023d41cc1791a458162234c2581579, type: 3}
@@ -6095,6 +6107,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!4 &559965911 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9190095107950864778, guid: 8949b4a88fb989e4483115e02dfafc96, type: 3}
@@ -6118,6 +6131,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!43 &579733128
 Mesh:
   m_ObjectHideFlags: 0
@@ -7029,7 +7043,7 @@ PrefabInstance:
       objectReference: {fileID: 1199239080}
     - target: {fileID: 1185547482854349348, guid: 1d023d41cc1791a458162234c2581579, type: 3}
       propertyPath: m_VersionIndex
-      value: 3162
+      value: 3165
       objectReference: {fileID: 0}
     - target: {fileID: 1185547482854349348, guid: 1d023d41cc1791a458162234c2581579, type: 3}
       propertyPath: m_SelectedEdges.Array.size
@@ -7065,7 +7079,7 @@ PrefabInstance:
       objectReference: {fileID: 1910384394}
     - target: {fileID: 1185547484621788325, guid: 1d023d41cc1791a458162234c2581579, type: 3}
       propertyPath: m_VersionIndex
-      value: 606
+      value: 609
       objectReference: {fileID: 0}
     - target: {fileID: 1185547484621788327, guid: 1d023d41cc1791a458162234c2581579, type: 3}
       propertyPath: m_SelectedEditorRenderState
@@ -7605,6 +7619,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!114 &646009256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7623,6 +7638,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!114 &659832799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7641,6 +7657,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!43 &663452013
 Mesh:
   m_ObjectHideFlags: 0
@@ -8303,7 +8320,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-21512
+  m_Name: pb_Mesh-19520
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9068,13 +9085,14 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!43 &795904866
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-20788
+  m_Name: pb_Mesh-18748
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9759,6 +9777,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1 &826050618
 GameObject:
   m_ObjectHideFlags: 0
@@ -11388,7 +11407,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-20662
+  m_Name: pb_Mesh-18622
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11909,6 +11928,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1 &903587202
 GameObject:
   m_ObjectHideFlags: 0
@@ -12529,6 +12549,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1 &905942884
 GameObject:
   m_ObjectHideFlags: 0
@@ -13596,6 +13617,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1 &924818225 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8750441588209735861, guid: 79723f7a04c42fa4cb0fefb4f7686381, type: 3}
@@ -13633,6 +13655,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!43 &925087020
 Mesh:
   m_ObjectHideFlags: 0
@@ -13833,6 +13856,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!114 &931509997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13851,6 +13875,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!43 &935865294
 Mesh:
   m_ObjectHideFlags: 0
@@ -14469,6 +14494,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!114 &1052161098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14487,6 +14513,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!4 &1076396808 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 968292777417071141, guid: 56a93cd127ed0184982c13ec0a61cfa5, type: 3}
@@ -14510,6 +14537,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!43 &1095666167
 Mesh:
   m_ObjectHideFlags: 0
@@ -14901,6 +14929,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1 &1126113865 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8683100469954120606, guid: 28f3f85a3fb032b4cbee99b8dd59df44, type: 3}
@@ -14937,6 +14966,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!114 &1141444135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14955,6 +14985,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!64 &1142219819
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15984,6 +16015,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!114 &1197895242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16002,13 +16034,14 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!43 &1199239080
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-20692
+  m_Name: pb_Mesh-18652
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16184,13 +16217,14 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!43 &1210994483
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-20804
+  m_Name: pb_Mesh-18764
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16658,7 +16692,7 @@ PrefabInstance:
       objectReference: {fileID: 795904866}
     - target: {fileID: 1185547482854349348, guid: 1d023d41cc1791a458162234c2581579, type: 3}
       propertyPath: m_VersionIndex
-      value: 3159
+      value: 3162
       objectReference: {fileID: 0}
     - target: {fileID: 1185547482854349348, guid: 1d023d41cc1791a458162234c2581579, type: 3}
       propertyPath: m_SelectedEdges.Array.size
@@ -16690,7 +16724,7 @@ PrefabInstance:
       objectReference: {fileID: 1210994483}
     - target: {fileID: 1185547484621788325, guid: 1d023d41cc1791a458162234c2581579, type: 3}
       propertyPath: m_VersionIndex
-      value: 609
+      value: 612
       objectReference: {fileID: 0}
     - target: {fileID: 1185547484621788327, guid: 1d023d41cc1791a458162234c2581579, type: 3}
       propertyPath: m_SelectedEditorRenderState
@@ -17033,10 +17067,12 @@ MonoBehaviour:
   maxPrintAmt: 1
   maxManualPrintSpeed: 30
   maxManualPrintAmt: 1
+  maxCleanLevel: 5
   printSpeedLvl: 1
   printAmtLvl: 1
   manualPrintSpeedLvl: 1
   manualPrintAmtLvl: 1
+  cleanScoreMultiplier: 1
 --- !u!4 &1275510620
 Transform:
   m_ObjectHideFlags: 0
@@ -17087,6 +17123,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!65 &1293362485
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17477,13 +17514,14 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!43 &1317705109
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-20678
+  m_Name: pb_Mesh-18638
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -17794,6 +17832,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!43 &1373738299
 Mesh:
   m_ObjectHideFlags: 0
@@ -18061,6 +18100,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1 &1388363769 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4806556609691728875, guid: 79723f7a04c42fa4cb0fefb4f7686381, type: 3}
@@ -18084,6 +18124,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!64 &1391033589
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -18820,6 +18861,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1 &1437749314
 GameObject:
   m_ObjectHideFlags: 0
@@ -19188,6 +19230,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1 &1487646531
 GameObject:
   m_ObjectHideFlags: 0
@@ -19841,6 +19884,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1 &1491596222 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6238398470252456845, guid: 3f38091ec14910c4c8b8af3bab31b1bf, type: 3}
@@ -19877,6 +19921,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1 &1507198940
 GameObject:
   m_ObjectHideFlags: 0
@@ -19932,6 +19977,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1 &1518116041
 GameObject:
   m_ObjectHideFlags: 0
@@ -20338,6 +20384,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1 &1539214348 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6795685716915025300, guid: 10d4ee2e07ed6c043bcfb109fd37b49a, type: 3}
@@ -20361,6 +20408,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!64 &1539214353
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -21365,6 +21413,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!65 &1602973266
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21396,6 +21445,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1 &1607909535
 GameObject:
   m_ObjectHideFlags: 0
@@ -22243,6 +22293,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!64 &1615776870
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -23223,6 +23274,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1001 &1657730976
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23519,6 +23571,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1 &1745144409
 GameObject:
   m_ObjectHideFlags: 0
@@ -23610,6 +23663,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1 &1748207384
 GameObject:
   m_ObjectHideFlags: 0
@@ -24537,6 +24591,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!65 &1777471252
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29668,6 +29723,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1 &1819224689
 GameObject:
   m_ObjectHideFlags: 0
@@ -30681,6 +30737,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1 &1832309082
 GameObject:
   m_ObjectHideFlags: 0
@@ -31738,6 +31795,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1001 &1855653679
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32005,6 +32063,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1001 &1904428559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32088,7 +32147,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-20708
+  m_Name: pb_Mesh-18668
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -33318,6 +33377,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1001 &2001067078
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33412,6 +33472,18 @@ PrefabInstance:
     - target: {fileID: 6020414463285223606, guid: 532a6cf18b11a594bb39696840f3447d, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6072016787038219206, guid: 532a6cf18b11a594bb39696840f3447d, type: 3}
+      propertyPath: dirtyColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6072016787038219206, guid: 532a6cf18b11a594bb39696840f3447d, type: 3}
+      propertyPath: dirtyColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6072016787038219206, guid: 532a6cf18b11a594bb39696840f3447d, type: 3}
+      propertyPath: dirtyColor.r
+      value: 0.43670893
       objectReference: {fileID: 0}
     - target: {fileID: 6230272583929435026, guid: 532a6cf18b11a594bb39696840f3447d, type: 3}
       propertyPath: m_AnchorMax.y
@@ -33553,6 +33625,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1 &2026737645
 GameObject:
   m_ObjectHideFlags: 0
@@ -33614,6 +33687,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!43 &2054427988
 Mesh:
   m_ObjectHideFlags: 0
@@ -33801,6 +33875,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!114 &2090776701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33819,6 +33894,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1 &2102252418
 GameObject:
   m_ObjectHideFlags: 0
@@ -34128,6 +34204,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1 &2113504701 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3634569281090917015, guid: 708f360dca4c28243813704f811ad080, type: 3}
@@ -34156,6 +34233,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1 &2116708684
 GameObject:
   m_ObjectHideFlags: 0
@@ -34208,6 +34286,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1 &2140126680
 GameObject:
   m_ObjectHideFlags: 0
@@ -34571,6 +34650,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1 &1003534113206488
 GameObject:
   m_ObjectHideFlags: 0
@@ -37828,6 +37908,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!65 &65538809389136667
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37872,6 +37953,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!65 &65605843372419363
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37929,6 +38011,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!65 &65872383214638054
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37986,6 +38069,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!4 &86442868687020623
 Transform:
   m_ObjectHideFlags: 0
@@ -39179,6 +39263,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!23 &627318341270286472
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -40914,7 +40999,7 @@ PrefabInstance:
       objectReference: {fileID: 740552045}
     - target: {fileID: 1185547482854349348, guid: 1d023d41cc1791a458162234c2581579, type: 3}
       propertyPath: m_VersionIndex
-      value: 3156
+      value: 3159
       objectReference: {fileID: 0}
     - target: {fileID: 1185547482854349351, guid: 1d023d41cc1791a458162234c2581579, type: 3}
       propertyPath: m_Mesh
@@ -40934,7 +41019,7 @@ PrefabInstance:
       objectReference: {fileID: 9213750}
     - target: {fileID: 1185547484621788325, guid: 1d023d41cc1791a458162234c2581579, type: 3}
       propertyPath: m_VersionIndex
-      value: 606
+      value: 609
       objectReference: {fileID: 0}
     - target: {fileID: 1185547484621788327, guid: 1d023d41cc1791a458162234c2581579, type: 3}
       propertyPath: m_SelectedEditorRenderState
@@ -46204,6 +46289,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!4 &5363743884153795295
 Transform:
   m_ObjectHideFlags: 0
@@ -46863,6 +46949,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!33 &5879759524512548269
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -46986,6 +47073,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1 &5987332885497857522
 GameObject:
   m_ObjectHideFlags: 0
@@ -47137,6 +47225,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!23 &6008525158314557623
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -48303,6 +48392,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!23 &6685766845661455846
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -48798,6 +48888,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!33 &6991706396091418550
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -49485,6 +49576,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!33 &7337096146854371657
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -49863,6 +49955,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!4 &7527637804862383961
 Transform:
   m_ObjectHideFlags: 0
@@ -50273,6 +50366,7 @@ GameObject:
   - component: {fileID: 1441251883}
   - component: {fileID: 1441251880}
   - component: {fileID: 1441251881}
+  - component: {fileID: 8103463392109614762}
   m_Layer: 0
   m_Name: Broiler_Door
   m_TagString: Untagged
@@ -50280,6 +50374,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8103463392109614762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8103463392109614761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ad3f4c9fb6b06c448c062414cade746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objName: 
+  texture:
+  - {fileID: 2800000, guid: cf1a3f0058e3a8840a0745f00321cbd0, type: 3}
+  - {fileID: 0}
+  cleanScore: 0
+  level: 0
+  isDirty: 1
 --- !u!23 &8105658573199494270
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -50480,6 +50593,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!4 &8282356356873178637
 Transform:
   m_ObjectHideFlags: 0
@@ -50570,6 +50684,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!23 &8457291187068953655
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -50778,6 +50893,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1 &8527229568591162284
 GameObject:
   m_ObjectHideFlags: 0
@@ -51103,6 +51219,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!23 &8728400213010876115
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -51243,6 +51360,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!23 &8786135026916777153
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -51542,6 +51660,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!23 &8925023335583537863
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -52098,6 +52217,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1 &9078991196317204860
 GameObject:
   m_ObjectHideFlags: 0
@@ -52298,6 +52418,7 @@ MonoBehaviour:
   - {fileID: 0}
   cleanScore: 0
   level: 0
+  isDirty: 1
 --- !u!1 &9163871766476513028
 GameObject:
   m_ObjectHideFlags: 0

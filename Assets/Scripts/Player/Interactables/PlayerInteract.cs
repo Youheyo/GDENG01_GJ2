@@ -74,15 +74,18 @@ public class PlayerInteract : MonoBehaviour
 			if (Input.GetKeyDown(KeyCode.F))
 			{
 				//raycastedObj.SetActive(false);
-				
-				if (raycastedObj != null)
+				raycastedObj.TryGetComponent(out MaterialChangeScript changeScript);
+				if (raycastedObj != null && changeScript.isDirty)
+				{
+					
 					raycastedObj.GetComponent<ObjectInteracted>().onClean();
 
 					cleanParticleEffect.transform.position = hit.transform.position;
 					cleanParticleEffect.Play();
 
 					HammerObject.GetComponent<Animator>().SetTrigger("isCleaning");
-					HammerObject.transform.position = hit.transform.position + new Vector3(0.0f,2.0f,0.0f);
+					HammerObject.transform.position = hit.transform.position + new Vector3(0.0f,1.0f,0.0f);
+				}
 				 
 			}
 
@@ -100,7 +103,7 @@ public class PlayerInteract : MonoBehaviour
 					cleanParticleEffect.Play();
 
 					HammerObject.GetComponent<Animator>().SetTrigger("isCleaning");
-					HammerObject.transform.position = hit.transform.position + new Vector3(0.0f,2.0f,0.0f);
+					HammerObject.transform.position = hit.transform.position + new Vector3(0.0f,1.0f,0.0f);
 
 				}
 				else 
