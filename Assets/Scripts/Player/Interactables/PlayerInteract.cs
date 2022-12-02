@@ -28,7 +28,8 @@ public class PlayerInteract : MonoBehaviour
 		if(Physics.Raycast(transform.position, fwd, out hit, rayLength))
 		{
 				raycastedObj = hit.collider.gameObject;
-
+				
+			//Interact 
 				if (Input.GetKeyDown(KeyCode.E))
 				{
 					Debug.Log("Interacted with " + raycastedObj.name);
@@ -37,7 +38,7 @@ public class PlayerInteract : MonoBehaviour
 					raycastedObj.GetComponent<ObjectInteracted>().onInteract();
 				}
 
-			//Clean Button
+			//Clean Button by making object change
 			if (Input.GetKeyDown(KeyCode.F))
 			{
 				//raycastedObj.SetActive(false);
@@ -51,24 +52,39 @@ public class PlayerInteract : MonoBehaviour
 					HammerObject.GetComponent<Animator>().SetTrigger("isCleaning");
 					HammerObject.transform.position = hit.transform.position + new Vector3(0.0f,2.0f,0.0f);
 				 
-				/*
+			}
+
+			//Clean by changing it directly
+			if (Input.GetKeyDown(KeyCode.R))
+			{
+				//raycastedObj.SetActive(false);
+
 				if(raycastedObj.GetComponent<Renderer>().material.GetTexture("_DetailAlbedoMap") != null)
 				{
 					Debug.Log("Cleaning " + raycastedObj.name);
 					raycastedObj.GetComponent<Renderer>().material.SetTexture("_DetailAlbedoMap", null);
 					gameManager.cleanAdd(1);
+					cleanParticleEffect.transform.position = hit.transform.position;
+					cleanParticleEffect.Play();
+
+					HammerObject.GetComponent<Animator>().SetTrigger("isCleaning");
+					HammerObject.transform.position = hit.transform.position + new Vector3(0.0f,2.0f,0.0f);
 
 				}
 				else 
 					Debug.Log($"{raycastedObj.name} is already clean!");
-				 */
 			}
 
 			//Put Dirt on object
-			if (Input.GetKeyDown(KeyCode.V))
+			if (Input.GetKeyDown(KeyCode.T))
 			{
 				Debug.Log("Applying Dirt on " + raycastedObj.name);
-				//raycastedObj.GetComponent<Renderer>().material.SetTexture("_DetailAlbedoMap", dirtTexture);
+				raycastedObj.GetComponent<Renderer>().material.SetTexture("_DetailAlbedoMap", dirtTexture);
+			}
+			//Put Dirt on object by script
+			if (Input.GetKeyDown(KeyCode.G))
+			{
+				Debug.Log("Applying Dirt on " + raycastedObj.name);
 				raycastedObj.GetComponent<ObjectInteracted>().applyDirt();
 			}
 
