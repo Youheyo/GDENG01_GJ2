@@ -43,9 +43,10 @@ public class PlayerInteract : MonoBehaviour
 
 		if(Physics.Raycast(transform.position, fwd, out hit, rayLength) && raycastOff == false)
 		{
+			raycastedObj = hit.collider.gameObject;
 			if (hit.collider.CompareTag("Interactable"))
 			{
-				raycastedObj = hit.collider.gameObject;
+				//raycastedObj = hit.collider.gameObject;
 				
 			//Interact 
 				if (Input.GetKeyDown(KeyCode.E))
