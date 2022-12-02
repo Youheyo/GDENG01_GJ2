@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Upgradeables : MonoBehaviour
 {
@@ -55,8 +56,8 @@ public class Upgradeables : MonoBehaviour
 		Debug.Log("Test worked");
 	}
 
-	public virtual void applyUpgrades(string upgVar, int upgPrice) {
-		Debug.Log("upgVar is: " + upgVar);
-		Debug.Log("upgPrice is: " + upgPrice);
+	public virtual void applyUpgrades(Upgradeables._upgrade upg, TMP_Text priceText) {
+		Debug.Log("upgVar is: " + upg.upgStatVar);
+		Debug.Log("upgPrice is: " + upg.upgPrice);
 	}
 }

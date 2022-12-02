@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MoneyMakerScript : Upgradeables
 {
@@ -65,28 +66,36 @@ public class MoneyMakerScript : Upgradeables
 		isManual = true;
 	}
 
- 	public override void applyUpgrades(string upgVar, int upgPrice) {
-		if(GameManager.instance.getMoneyAmt() >= upgPrice) {
-			switch(upgVar) {
+ 	public override void applyUpgrades(Upgradeables._upgrade upg, TMP_Text priceText) {
+		if(GameManager.instance.getMoneyAmt() >= upg.upgPrice) {
+			bool upgStatus = false;
+			switch(upg.upgStatVar) {
 			case "maxPrintSpeed":
-				GameManager.instance.upgMaxPSpeed();
+				upgStatus = GameManager.instance.upgMaxPSpeed();
 				break;
 			case "maxPrintAmt":
-				GameManager.instance.upgMaxPAmt();
+				upgStatus = GameManager.instance.upgMaxPAmt();
 				break;
 			case "maxManualPrintSpeed":
-				GameManager.instance.upgMaxMPSpeed();
+				upgStatus = GameManager.instance.upgMaxMPSpeed();
 				break;
 			case "maxManualPrintAmt":
-				GameManager.instance.upgMaxMPAmt();
+				upgStatus = GameManager.instance.upgMaxMPAmt();
 				break;
 			default:
 				Debug.Log("Upgrade failed");
 				break;
 			}
 
-			GameManager.instance.moneyAdd(-upgPrice);
-			updateStats();
+			if(upgStatus != false) {
+				GameManager.instance.moneyAdd(-upg.upgPrice);
+				updateStats();
+
+				upg.upgPrice = (int)(upg.upgPrice * 1.5f);
+				priceText.text = " - " + upg.upgPrice;
+			} else {
+				Debug.Log("No more upgrades");
+			}
 		} else {
 			Debug.Log("Not enough money");
 		}

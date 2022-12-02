@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.UI;
 
 public class PlayerInteract : MonoBehaviour
 {
@@ -103,9 +102,10 @@ public class PlayerInteract : MonoBehaviour
 			foreach(Upgradeables._upgrade _upg in upg.upgrades) {
 				var upgItem = Instantiate(upgradeItem, upgradePanel.transform.Find("upgContainer").transform);
 				upgItem.transform.Find("upgradeName").GetComponent<TMP_Text>().text = _upg.upgName;
-				upgItem.transform.Find("upgradePrice").GetComponent<TMP_Text>().text = " - " + _upg.upgPrice;
+				var upgPriceText = upgItem.transform.Find("upgradePrice").GetComponent<TMP_Text>(); 
+				upgPriceText.text = " - " + _upg.upgPrice;
 				var button = upgItem.transform.Find("upgradeButton").GetComponent<Button>();
-				button.onClick.AddListener(delegate {interactedObj.GetComponent<Upgradeables>().applyUpgrades(_upg.upgStatVar, _upg.upgPrice);});
+				button.onClick.AddListener(delegate {interactedObj.GetComponent<Upgradeables>().applyUpgrades(_upg, upgPriceText);});
 			}
 		} else {
 			//noUpgrades.GetComponent<MeshRenderer>().enabled = true;

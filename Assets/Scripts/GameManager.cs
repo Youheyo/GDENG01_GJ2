@@ -136,23 +136,35 @@ public class GameManager : MonoBehaviour
 
 	// A bunch of upgrade functions for money maker
 
-	public void upgMaxPSpeed() {
-		if(printSpeedLvl < 4)
-		printSpeedLvl++;
+	public bool upgMaxPSpeed() {
+		if(printSpeedLvl < 4) {
+			printSpeedLvl++;
+			return true;
+		}
+		return false;
 	}
 
-	public void upgMaxPAmt() {
-		if(printAmtLvl < 4)
-		printAmtLvl++;
+	public bool upgMaxPAmt() {
+		if(printAmtLvl < 4) {
+			printAmtLvl++;
+			return true;
+		}
+		return false;
 	}
 
-	public void upgMaxMPSpeed() {
-		if(manualPrintSpeedLvl < 4)
-		manualPrintSpeedLvl++;
+	public bool upgMaxMPSpeed() {
+		if(manualPrintSpeedLvl < 4){
+			manualPrintSpeedLvl++;
+			return true;
+		}
+		return false;
 	}
 
-	public void upgMaxMPAmt() {
-		if(manualPrintAmtLvl < 4)
-		manualPrintAmtLvl++;
+	public bool upgMaxMPAmt() {
+		if(manualPrintAmtLvl < 4) {
+			manualPrintAmtLvl++;
+			return true;
+		}
+		return false;
 	}
 }
