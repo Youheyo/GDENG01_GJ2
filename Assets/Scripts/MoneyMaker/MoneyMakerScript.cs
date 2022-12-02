@@ -76,13 +76,13 @@ public class MoneyMakerScript : Upgradeables
 			GameManager.instance.moneyAdd(maxManualPrintAmt);
 			manualPrintSpeed = maxManualPrintSpeed;
 			isManual = false;
+			particle.Play();
+			mmAnimator.SetTrigger("manual");
 		}
 		
 		printSpeed -= Time.deltaTime;
 		if(isManual == true){
 			manualPrintSpeed -= Time.deltaTime;
-			mmAnimator.SetTrigger("manual");
-			particle.Play();
 		}
 	}
 
