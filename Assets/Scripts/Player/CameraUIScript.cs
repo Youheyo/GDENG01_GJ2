@@ -20,8 +20,6 @@ public class CameraUIScript : MonoBehaviour
     [SerializeField] private GameObject upgradePanel;
     [SerializeField] private GameObject interactPanel;
 
-	[SerializeField] private bool holdingObject = false;
-
     // Update is called once per frame
     void Update()
     {
@@ -47,6 +45,12 @@ public class CameraUIScript : MonoBehaviour
                 cleanPanel.SetActive(false);
                 upgradePanel.SetActive(true);
                 interactPanel.SetActive(true);
+            }
+			else if (lookedObject.transform.CompareTag("Interactable") && lookedObject.name =="PlayerUpgrade")
+            {
+                cleanPanel.SetActive(false);
+                upgradePanel.SetActive(true);
+                interactPanel.SetActive(false);
             }
             else if (lookedObject.transform.CompareTag("Interactable"))
             {
