@@ -68,8 +68,14 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
+	// Initializes whatever the game needs to be initialized
 	public void startGame() {
 		gameObject.GetComponent<TimeHandler>().startTime();
+	}
+
+	// Removes everything that shouldn't exist/be alive anymore.
+	public void endGame() {
+		gameObject.GetComponent<TimeHandler>().stopTime();
 	}
 
 	// Functions related to time

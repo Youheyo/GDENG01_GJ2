@@ -98,6 +98,7 @@ public class PlayerUIScript : MonoBehaviour
 
 	public void GoToMainMenu()
 	{
+		GameManager.instance.endGame();
 		SceneManager.LoadScene("MainMenu");
 	}
 }

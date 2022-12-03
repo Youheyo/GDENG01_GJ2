@@ -35,6 +35,7 @@ public class TimeHandler : MonoBehaviour
 	public void stopTime() {
 		gameStarted = false;
 		day = 1;
+		_time.Clear();
 	}
 
 	void Update() {
