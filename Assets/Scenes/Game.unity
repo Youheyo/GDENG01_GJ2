@@ -22558,7 +22558,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1001 &960987258
 PrefabInstance:
@@ -46752,6 +46752,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5241244613200298136, guid: 532a6cf18b11a594bb39696840f3447d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2001067080}
+    - target: {fileID: 5241244613200298136, guid: 532a6cf18b11a594bb39696840f3447d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToMainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 7081084500223125144, guid: 532a6cf18b11a594bb39696840f3447d, type: 3}
       propertyPath: HammerObject
       value: 
@@ -46760,6 +46768,14 @@ PrefabInstance:
       propertyPath: cleanParticleEffect
       value: 
       objectReference: {fileID: 1803944630}
+    - target: {fileID: 7987356554660633756, guid: 532a6cf18b11a594bb39696840f3447d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2001067080}
+    - target: {fileID: 7987356554660633756, guid: 532a6cf18b11a594bb39696840f3447d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: resumeGame
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 532a6cf18b11a594bb39696840f3447d, type: 3}
 --- !u!1 &2001067079 stripped
@@ -46767,6 +46783,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3419548564213385644, guid: 532a6cf18b11a594bb39696840f3447d, type: 3}
   m_PrefabInstance: {fileID: 2001067078}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2001067080 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2578827168996490440, guid: 532a6cf18b11a594bb39696840f3447d, type: 3}
+  m_PrefabInstance: {fileID: 2001067078}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d20e2846f11907fabb08c5724509a3d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2001336240
 PrefabInstance:
   m_ObjectHideFlags: 0

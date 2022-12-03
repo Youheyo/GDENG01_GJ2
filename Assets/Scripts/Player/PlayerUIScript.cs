@@ -17,7 +17,8 @@ public class PlayerUIScript : MonoBehaviour
 	private int cleanCount = 0;
 
 	void Awake() {
-		
+		resumeGame();
+
 	}
 
 	private void OnDestroy() {
