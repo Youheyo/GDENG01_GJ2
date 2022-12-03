@@ -46,14 +46,16 @@ public class ReticleScript : MonoBehaviour
 
 			hit.transform.gameObject.GetComponent<Outline>().OutlineWidth = 11f;
 
+			/*
 			if (Input.GetMouseButton(0))
 			{
 				hit.transform.gameObject.GetComponent<Outline>().OutlineColor = activeColor;
 			}
 			else
 			{
+			 */
 				hit.transform.gameObject.GetComponent<Outline>().OutlineColor = inactiveColor;
-			}
+			//}
 			hit.transform.gameObject.GetComponent<outlinescript>().AssureOutline();
 
 		}

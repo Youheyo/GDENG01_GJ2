@@ -5,16 +5,20 @@ using UnityEngine;
 
 public class MaterialChangeScript : ObjectInteracted
 {
-	[SerializeField] private Texture[] texture;
-	public int level = 0;
-	Renderer rend;
 	public bool isDirty = true;
+	public int level = 0;
+	[SerializeField] private Texture[] texture;
+
+	[Header("Animation Location")]
+	public GameObject spawnLocation;
+	Renderer rend;
 	private float dirtTimer;
 	private float Timer;
 
 
-    // Start is called before the first frame update
-    void Start()
+
+	// Start is called before the first frame update
+	void Start()
     {
         this.rend = GetComponent<Renderer>();
 		this.rend.enabled = true;
