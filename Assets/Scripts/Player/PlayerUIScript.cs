@@ -39,7 +39,8 @@ public class PlayerUIScript : MonoBehaviour
 		moneyCount = GameManager.instance.getMoneyAmt();
 		moneyText.text = "Money: " + moneyCount.ToString();
 		cleanCount = GameManager.instance.getCleanAmt();
-		cleanText.text = "Cleanliness: " + cleanCount.ToString();
+		var cleanLimit = GameManager.instance.getCleanLimit();
+		cleanText.text = "Cleanliness: " + cleanCount.ToString() + "/" + cleanLimit.ToString();
 		if (Input.GetButtonDown("Cancel"))
 		{
 			pauseScreen();

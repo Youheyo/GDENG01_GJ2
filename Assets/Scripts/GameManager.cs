@@ -44,9 +44,11 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private int manualPrintSpeedLvl = 1;
 	[SerializeField] private int manualPrintAmtLvl = 1;
 
-	[Header("Time-related Variables")]
+	[Header("Time & GameState-related Variables")]
 	[SerializeField] private int day = 1;
 	[SerializeField] private int dayLimit = 7;
+	[SerializeField] private int cleanLimit = 10000;
+	[SerializeField] private bool isBadEnd = false;
 	
 	// Declare functions here
 	private void Awake() {
@@ -68,7 +70,7 @@ public class GameManager : MonoBehaviour
 		}
 		if(Input.GetKeyDown(KeyCode.P)) {
 			Debug.Log("[DEBUG] - Increase Cleanliness");
-			cleanCountAmt++;
+			cleanCountAmt += 500;
 		}
 		if(Input.GetKeyDown(KeyCode.L)) {
 			Debug.Log("[DEBUG] - Day Skip");
@@ -82,6 +84,9 @@ public class GameManager : MonoBehaviour
 	public void checkGameEnd() {
 		if(day > dayLimit) {
 			endGame();
+			if(cleanCountAmt < cleanLimit) {
+				isBadEnd = true;
+			}
 			// Initialize some kinda endgame here
 		}
 	}
@@ -130,6 +135,10 @@ public class GameManager : MonoBehaviour
 
 	public int getCleanAmt() {
 		return cleanCountAmt;
+	}
+
+	public int getCleanLimit() {
+		return cleanLimit;
 	}
 
 	// -----A bunch of getter functions for money maker
