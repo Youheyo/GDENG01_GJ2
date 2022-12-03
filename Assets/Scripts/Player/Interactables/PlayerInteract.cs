@@ -34,8 +34,7 @@ public class PlayerInteract : MonoBehaviour
 	}
 
 	// Update is called once per frame
-	void Update()
-    {
+	void Update() {
         RaycastHit hit;
 		Vector3 fwd = transform.TransformDirection(Vector3.forward);
 
@@ -46,7 +45,7 @@ public class PlayerInteract : MonoBehaviour
 			{
 				//raycastedObj = hit.collider.gameObject;
 				
-			//Interact 
+				// Interact 
 				if (Input.GetKeyDown(KeyCode.E))
 				{
 					//raycastedObj.SetActive(false);
@@ -57,6 +56,7 @@ public class PlayerInteract : MonoBehaviour
 					}
 				}
 
+				// Upgrade
 				if(Input.GetMouseButtonDown(1)) {
 					interactedObj = hit.transform.gameObject;
 					Debug.Log("Upgrading: " + interactedObj.name);
@@ -107,7 +107,7 @@ public class PlayerInteract : MonoBehaviour
 			}
 			 */
 		}
-  }
+	}
 
 	void OnDrawGizmosSelected()
 	{
