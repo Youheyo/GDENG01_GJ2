@@ -47,7 +47,7 @@ public class MaterialChangeScript : ObjectInteracted
 			if(Timer > dirtTimer)
 			{
 				Timer = 0;
-				this.dirtTimer = Random.Range(10.0f, 30.0f);
+				this.dirtTimer = Random.Range(20.0f, 60.0f);
 				this.applyDirt();
 			}
 		}

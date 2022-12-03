@@ -59,7 +59,7 @@ public class PlayerInteract : MonoBehaviour
 					}
 				}
 
-				if(Input.GetMouseButtonDown(0)) {
+				if(Input.GetMouseButtonDown(1)) {
 					interactedObj = hit.transform.gameObject;
 					Debug.Log("Upgrading: " + interactedObj.name);
 					if(interactedObj != null) {
@@ -73,7 +73,7 @@ public class PlayerInteract : MonoBehaviour
 			}
       
 			//Clean Button by making object change
-			if (Input.GetKeyDown(KeyCode.F))
+			if (Input.GetMouseButtonDown(0))
 			{
 				//raycastedObj.SetActive(false);
 				raycastedObj.TryGetComponent(out MaterialChangeScript changeScript);
@@ -92,11 +92,13 @@ public class PlayerInteract : MonoBehaviour
 			}
 			//FOR DEBUG ONLY
 			//Put Dirt on object by script
+			/*
 			if (Input.GetKeyDown(KeyCode.G))
 			{
 				Debug.Log("Applying Dirt on " + raycastedObj.name);
 				raycastedObj.GetComponent<ObjectInteracted>().applyDirt();
 			}
+			 */
 		}
   }
 

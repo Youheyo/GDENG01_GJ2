@@ -16,9 +16,8 @@ public class CameraUIScript : MonoBehaviour
 
     [Space(10)]
     [Header("Action Panels")]
-    [SerializeField] private GameObject grabPanel;
-    [SerializeField] private GameObject throwPanel;
-    [SerializeField] private GameObject pushPanel;
+    [SerializeField] private GameObject cleanPanel;
+    [SerializeField] private GameObject upgradePanel;
     [SerializeField] private GameObject interactPanel;
 
 	[SerializeField] private bool holdingObject = false;
@@ -43,21 +42,32 @@ public class CameraUIScript : MonoBehaviour
         //if looking at object
         if (lookedObject != null)
         {
-            if (lookedObject.transform.CompareTag("Interactable"))
+			if (lookedObject.transform.CompareTag("Interactable") && lookedObject.name =="MoneyMaker")
             {
-                grabPanel.SetActive(false);
-                throwPanel.SetActive(false);
-                pushPanel.SetActive(false);
+                cleanPanel.SetActive(false);
+                upgradePanel.SetActive(true);
                 interactPanel.SetActive(true);
             }
+            else if (lookedObject.transform.CompareTag("Interactable"))
+            {
+                cleanPanel.SetActive(false);
+                upgradePanel.SetActive(false);
+                interactPanel.SetActive(true);
+            }
+			if (lookedObject.transform.CompareTag("Cleanable"))
+            {
+                cleanPanel.SetActive(true);
+                upgradePanel.SetActive(false);
+                interactPanel.SetActive(false);
+            }
+
 
         }
         //if not looking at object
         if (lookedObject == null)
         {
-            grabPanel.SetActive(false);
-            throwPanel.SetActive(false);
-            pushPanel.SetActive(false);
+            cleanPanel.SetActive(false);
+            upgradePanel.SetActive(false);
             interactPanel.SetActive(false);
         }
     }
