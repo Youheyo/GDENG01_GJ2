@@ -40,7 +40,7 @@ public class PlayerUIScript : MonoBehaviour
 		moneyText.text = "Money: " + moneyCount.ToString();
 		cleanCount = GameManager.instance.getCleanAmt();
 		var cleanLimit = GameManager.instance.getCleanLimit();
-		cleanText.text = "Cleanliness: " + cleanCount.ToString() + "/" + cleanLimit.ToString();
+		cleanText.text = $"Cleanliness {((float)cleanCount / (float)cleanLimit)*100}%";
 		if (Input.GetButtonDown("Cancel"))
 		{
 			pauseScreen();
