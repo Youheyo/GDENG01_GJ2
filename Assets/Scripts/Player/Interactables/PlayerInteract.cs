@@ -75,7 +75,7 @@ public class PlayerInteract : MonoBehaviour
 			{
 				//raycastedObj.SetActive(false);
 				raycastedObj.TryGetComponent(out MaterialChangeScript changeScript);
-				if (raycastedObj != null && changeScript.isDirty)
+				if (raycastedObj != null && changeScript != null && changeScript.isDirty)
 				{
 					
 					raycastedObj.GetComponent<ObjectInteracted>().onClean();
