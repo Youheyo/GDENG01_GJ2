@@ -5095,6 +5095,14 @@ PrefabInstance:
       propertyPath: cleanParticleEffect
       value: 
       objectReference: {fileID: 1803944630}
+    - target: {fileID: 7657282091610641653, guid: 532a6cf18b11a594bb39696840f3447d, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 6c65e48d266b354498958acc5171462e, type: 2}
+    - target: {fileID: 7657282091610641653, guid: 532a6cf18b11a594bb39696840f3447d, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 5464578654347153305, guid: 6c65e48d266b354498958acc5171462e, type: 2}
     - target: {fileID: 7718023318560605740, guid: 532a6cf18b11a594bb39696840f3447d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
