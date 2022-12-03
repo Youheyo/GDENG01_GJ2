@@ -82,11 +82,20 @@ public class PlayerInteract : MonoBehaviour
 					
 					raycastedObj.GetComponent<ObjectInteracted>().onClean();
 
-					cleanParticleEffect.transform.position = hit.transform.position;
-					cleanParticleEffect.Play();
 
+					if (changeScript.spawnLocation == null)
+					{
+						HammerObject.transform.position = hit.transform.position + new Vector3(0.0f, 1.0f, 0.0f);
+						cleanParticleEffect.transform.position = hit.transform.position;
+					}
+					else
+					{
+						HammerObject.transform.position = changeScript.spawnLocation.transform.position;
+						cleanParticleEffect.transform.position = changeScript.spawnLocation.transform.position;
+					}
+
+					cleanParticleEffect.Play();
 					HammerObject.GetComponent<Animator>().SetTrigger("isCleaning");
-					HammerObject.transform.position = hit.transform.position + new Vector3(0.0f,1.0f,0.0f);
 				}
 				 
 			}

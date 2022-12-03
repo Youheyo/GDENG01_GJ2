@@ -5,11 +5,14 @@ using UnityEngine;
 
 public class MaterialChangeScript : ObjectInteracted
 {
-	[SerializeField] private Texture[] texture;
+	public bool isDirty = true;
 	public int level = 0;
+	[SerializeField] private Texture[] texture;
+
+	[Header("Animation Location")]
+	public GameObject spawnLocation;
 	Renderer rend;
 	GameManager gameManager;
-	public bool isDirty = true;
 	private float dirtTimer;
 	private float Timer;
 
