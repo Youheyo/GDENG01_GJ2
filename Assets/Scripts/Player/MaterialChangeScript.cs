@@ -8,7 +8,6 @@ public class MaterialChangeScript : ObjectInteracted
 	[SerializeField] private Texture[] texture;
 	public int level = 0;
 	Renderer rend;
-	GameManager gameManager;
 	public bool isDirty = true;
 	private float dirtTimer;
 	private float Timer;
@@ -17,8 +16,6 @@ public class MaterialChangeScript : ObjectInteracted
     // Start is called before the first frame update
     void Start()
     {
-		gameManager = FindObjectOfType<GameManager>();
-
         this.rend = GetComponent<Renderer>();
 		this.rend.enabled = true;
 		this.rend.material.SetTexture("_DetailAlbedoMap", texture[level]);
@@ -68,7 +65,7 @@ public class MaterialChangeScript : ObjectInteracted
 		if (level < texture.Length)
 		{
 			this.level++;
-			gameManager.cleanAdd(1);
+			GameManager.instance.cleanAdd(1);
 			this.rend.material.SetTexture("_DetailAlbedoMap", texture[level]);
 			this.isDirty = false;
 			if (this.gameObject.tag != "Interactable") this.gameObject.tag = "Untagged";

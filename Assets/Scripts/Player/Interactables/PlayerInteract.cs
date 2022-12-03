@@ -20,7 +20,6 @@ public class PlayerInteract : MonoBehaviour
 	private bool raycastOff = false;
 
 	public Texture dirtTexture;
-	GameManager gameManager;
 	[SerializeField] ParticleSystem cleanParticleEffect;
 	[SerializeField] GameObject HammerObject;
 	//[SerializeField] private LayerMask layerMaskInteract;
@@ -32,7 +31,6 @@ public class PlayerInteract : MonoBehaviour
 
 	private void Start()
 	{
-		gameManager = FindObjectOfType<GameManager>();
 	}
 
 	// Update is called once per frame

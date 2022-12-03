@@ -35,7 +35,9 @@ public class Upgradeables : MonoBehaviour
 
 	[SerializeField] public _upgrade[] upgrades;
 
-	/*
+	/* // Initializes dictionary
+	 * Do not delete, will be used as reference for the future if an implementation
+	 * like this is needed.
 	public void initDict() {
 		if(statsInt.Length > 0){
 			foreach(Upgradeables._statint stat in statsInt){
