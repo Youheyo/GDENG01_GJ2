@@ -94,6 +94,8 @@ public class PlayerInteract : MonoBehaviour
 
 					cleanParticleEffect.Play();
 					HammerObject.GetComponent<Animator>().SetTrigger("isCleaning");
+
+					GameManager.instance.checkGameEnd();
 				}
 				 
 			}

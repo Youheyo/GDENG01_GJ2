@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -82,13 +83,22 @@ public class GameManager : MonoBehaviour
 	
 	// Checks the game if it has ended yet
 	public void checkGameEnd() {
-		if(day > dayLimit) {
+		if(day > dayLimit || cleanCountAmt >= cleanLimit) {
 			endGame();
-			if(cleanCountAmt < cleanLimit) {
+			if (cleanCountAmt < cleanLimit)
+			{
 				isBadEnd = true;
 			}
+			else isBadEnd = false;
 			// Initialize some kinda endgame here
+			cleanCountAmt = 0;
+			SceneManager.LoadScene("EndScene");
 		}
+	}
+
+	public bool checkBadEnd()
+	{
+		return isBadEnd;
 	}
 
 	// Initializes whatever the game needs to be initialized
@@ -100,6 +110,7 @@ public class GameManager : MonoBehaviour
 	public void endGame() {
 		day = 1;
 		gameObject.GetComponent<TimeHandler>().stopTime();
+
 	}
 
 	// -----Functions related to time
