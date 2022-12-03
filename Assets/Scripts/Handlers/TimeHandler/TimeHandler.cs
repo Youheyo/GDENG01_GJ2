@@ -5,8 +5,6 @@ using TMPro;
 
 public class TimeHandler : MonoBehaviour
 {
-	public int day = 1;
-
 	[SerializeField] private bool gameStarted = false;
 
 	[SerializeField] float _dayLength = 24f;
@@ -33,17 +31,17 @@ public class TimeHandler : MonoBehaviour
 	}
 
 	public void stopTime() {
-		gameStarted = false;
-		day = 1;
 		_time.Clear();
+		gameStarted = false;
 	}
 
 	void Update() {
 		if(gameStarted == true) {
 			currentTime = (dayLength + currentTime + (Time.deltaTime * _timeFactor / 3600f)) % dayLength;
 			if(currentTime >= 23.99f) {
-				day++;
+				GameManager.instance.addDay();
 				currentTime = 0f;
+				GameManager.instance.checkGameEnd();
 			}
 		}
 

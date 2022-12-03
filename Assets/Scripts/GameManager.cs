@@ -43,6 +43,10 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private int printAmtLvl = 1;
 	[SerializeField] private int manualPrintSpeedLvl = 1;
 	[SerializeField] private int manualPrintAmtLvl = 1;
+
+	[Header("Time-related Variables")]
+	[SerializeField] private int day = 1;
+	[SerializeField] private int dayLimit = 7;
 	
 	// Declare functions here
 	private void Awake() {
@@ -66,6 +70,20 @@ public class GameManager : MonoBehaviour
 			Debug.Log("[DEBUG] - Increase Cleanliness");
 			cleanCountAmt++;
 		}
+		if(Input.GetKeyDown(KeyCode.L)) {
+			Debug.Log("[DEBUG] - Day Skip");
+			day++;
+		}
+	}
+
+	// -----Game state related functions
+	
+	// Checks the game if it has ended yet
+	public void checkGameEnd() {
+		if(day > dayLimit) {
+			endGame();
+			// Initialize some kinda endgame here
+		}
 	}
 
 	// Initializes whatever the game needs to be initialized
@@ -75,10 +93,11 @@ public class GameManager : MonoBehaviour
 
 	// Removes everything that shouldn't exist/be alive anymore.
 	public void endGame() {
+		day = 1;
 		gameObject.GetComponent<TimeHandler>().stopTime();
 	}
 
-	// Functions related to time
+	// -----Functions related to time
 	public void addTime(Time_Base time) {
 		gameObject.GetComponent<TimeHandler>().addTime(time);
 	}
@@ -87,7 +106,15 @@ public class GameManager : MonoBehaviour
 		return gameObject.GetComponent<TimeHandler>().getDayLength();
 	}
 
-	// Functions relating to player resources
+	public void addDay() {
+		day++;
+	}
+
+	public int getDay() {
+		return day;
+	}
+
+	// -----Functions relating to player resources
 
 	public void moneyAdd(int amt) {
 		moneyCountAmt += amt;
@@ -105,7 +132,7 @@ public class GameManager : MonoBehaviour
 		return cleanCountAmt;
 	}
 
-	// A bunch of getter functions for money maker
+	// -----A bunch of getter functions for money maker
 
 	public float getMaxPSpeed() {
 		return maxPrintSpeed;
@@ -123,7 +150,7 @@ public class GameManager : MonoBehaviour
 		return maxManualPrintAmt;
 	}
 
-	// A bunch of setter functions for money maker
+	// -----A bunch of setter functions for money maker
 
 	public void setMaxPSpeed(float val) {
 		maxPrintSpeed = val;
@@ -141,7 +168,7 @@ public class GameManager : MonoBehaviour
 		maxManualPrintAmt = val;
 	}
 
-	// A bunch of getter functions for money maker
+	// -----A bunch of getter functions for money maker
 
 	public int getPSpeedLvl() {
 		return printSpeedLvl;
@@ -159,7 +186,7 @@ public class GameManager : MonoBehaviour
 		return manualPrintAmtLvl;
 	}
 
-	// A bunch of upgrade functions for money maker
+	// -----A bunch of upgrade functions for money maker
 
 	public bool upgMaxPSpeed() {
 		if(printSpeedLvl < 4) {
