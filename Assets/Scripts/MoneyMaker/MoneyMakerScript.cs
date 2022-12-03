@@ -77,7 +77,8 @@ public class MoneyMakerScript : Upgradeables
 			manualPrintSpeed = maxManualPrintSpeed;
 			isManual = false;
 			particle.Play();
-			mmAnimator.SetTrigger("manual");
+			//mmAnimator.SetTrigger("manual");
+			mmAnimator.SetBool("ongoing", false);
 		}
 		
 		printSpeed -= Time.deltaTime;
@@ -88,9 +89,11 @@ public class MoneyMakerScript : Upgradeables
 
 	public void manualEnable(){
 		isManual = true;
+		mmAnimator.SetBool("ongoing", true);
+
 	}
 
- 	public override void applyUpgrades(Upgradeables._upgrade upg, TMP_Text priceText) {
+	public override void applyUpgrades(Upgradeables._upgrade upg, TMP_Text priceText) {
 		if(GameManager.instance.getMoneyAmt() >= upg.upgPrice) {
 			bool upgStatus = false;
 			switch(upg.upgStatVar) {
