@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviour
 
 	// Only use for debugging purposes or somehow anything that needs to be actively checked
 	void Update(){
+		/*
 		if(Input.GetKeyDown(KeyCode.O)) {
 			Debug.Log("[DEBUG] - Increase Money");
 			moneyCountAmt++;
@@ -77,6 +78,7 @@ public class GameManager : MonoBehaviour
 			Debug.Log("[DEBUG] - Day Skip");
 			day++;
 		}
+		*/
 	}
 
 	// -----Game state related functions
