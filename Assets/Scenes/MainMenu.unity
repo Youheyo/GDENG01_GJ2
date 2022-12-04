@@ -2476,7 +2476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameStarted: 0
   _dayLength: 24
-  _startingTime: 6
+  _startingTime: 12
   _timeFactor: 60
   _time: []
   currentTime: 0

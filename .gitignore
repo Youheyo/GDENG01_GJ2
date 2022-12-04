@@ -74,3 +74,6 @@ crashlytics-build.properties
 # Customs
 Assets/Imported/*
 .vscode/
+Assets/README.txt
+Assets/README.txt.meta
+NoPlaceLikeHome_Source.zip
